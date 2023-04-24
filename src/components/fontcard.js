@@ -7,3 +7,5 @@ function FontCard() {
         </div>
     )
 }
+
+export default FontCard
