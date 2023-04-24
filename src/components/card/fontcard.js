@@ -1,3 +1,5 @@
+import './fontcard.css'
+
 function FontCard() {
     return (
         <div className="font-card">

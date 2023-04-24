@@ -1,8 +1,10 @@
+import FontCard from "./card/fontcard"
+
 function Homepage() {
 
     return(
         <div className="homepage">
-            <h1>HELLO WORLD</h1>
+            <FontCard />
         </div>
     )
 }
