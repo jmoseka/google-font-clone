@@ -5,8 +5,9 @@ const fontsData = [
         fontowner:'Christian Robertson',
         text:'Whereas recognition of the inherit dignity',
         fontName: 'Roboto',
-        fontfamily: 'sans-serif'
-    },
+        fontfamily: 'sans-serif',
+        fontSize: 40,
+     },
 
     {
         id:2,
@@ -14,7 +15,8 @@ const fontsData = [
         fontowner:'Vernon Adams',
         text:'whereas recognition of the inherit dignity',
         fontName: 'Comme',
-        fontfamily: 'sans-serif'
+        fontfamily: 'sans-serif',
+        fontSize: 40
     },
 
     {
@@ -22,7 +24,8 @@ const fontsData = [
         fontname:'Open Sans',
         fontowner:'Steve Matteson',
         text:'Whereas recognition of the inherit dignity',
-        fontfamily: 'sans-serif'
+        fontfamily: 'sans-serif',
+        fontSize: 40
     },
 
     {
@@ -30,7 +33,8 @@ const fontsData = [
         fontname:'Montserrat',
         fontowner:' Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly',
         text:'whereas recognition of the inherit dignity',
-        fontfamily: 'sans-serif'
+        fontfamily: 'sans-serif',
+        fontSize: 40
     },
 
     {
@@ -38,7 +42,8 @@ const fontsData = [
         fontname:'Lato',
         fontowner:'Lukasz Dziedzic',
         text:'whereas recognition of the inherit dignity',
-        fontfamily: 'sans-serif'
+        fontfamily: 'sans-serif',
+        fontSize: 40
     },
 
     {
@@ -46,6 +51,9 @@ const fontsData = [
         fontname:'Poppins',
         fontowner:'Indian Type Foundry, Jonny Pinhorn',
         text:'Whereas recognition of the inherit dignity',
-        fontfamily: 'sans-serif'
+        fontfamily: 'sans-serif',
+        fontSize: 40
     }
 ]
+
+export default fontsData;

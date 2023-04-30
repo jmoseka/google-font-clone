@@ -3,11 +3,11 @@ import './toolbar/toolbar.css'
 import './homepage.css'
 import { useEffect, useState } from "react"
 import FontSize from "./toolbar/fontsize/fontsize";
+import fontsData from './data.js';
 
 function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
     const [sentence, setSentence] = useState(defaultSentence);
-
 
     function handleSentence(event) {
         setSentence(event.target.value)
@@ -22,7 +22,6 @@ function Homepage() {
     const [fontPX, setFontPX] = useState(40);
     function handleFontChange(newData) {
         setFontPX(newData);
-        console.log(fontPX);
       }
 
     return(
@@ -44,7 +43,12 @@ function Homepage() {
 
         </div>
 
-            <FontCard fontText={sentence} fontSize={fontPX} />
+        {
+            fontsData.map((data) => {
+                return <FontCard key={data.id} fontText={sentence} fontSize={fontPX} fontsdata={data} />
+            })
+        }
+
         </div>
     )
 }

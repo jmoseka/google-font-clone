@@ -1,12 +1,16 @@
 import './fontcard.css'
 
-function FontCard({fontText, fontSize}) {
-    console.log(fontText);
+function FontCard({fontsdata, fontText, fontSize}) {
+    const {fontowner, fontfamily, fontname} = fontsdata;
+
     return (
         <div className="font-card">
-            <h2 className="font-name">San serif</h2>
-            <p className="font-owner">Christian rovbertson</p>
-            <p className="font-text" style={{ fontSize: `${fontSize}px` }}>{fontText}</p>
+            <h2 className="font-name">{fontname}</h2>
+            <p className="font-owner">{fontowner}</p>
+            <p className="font-text" style={{ fontSize: `${fontSize}px`,
+            fontFamily: `'${fontname}', ${fontfamily}`
+        }}>
+                {fontText}</p>
         </div>
     )
 }
