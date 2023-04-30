@@ -2,19 +2,27 @@ import FontCard from "./card/fontcard"
 import './toolbar/toolbar.css'
 import './homepage.css'
 import { useEffect, useState } from "react"
+import FontSize from "./toolbar/fontsize/fontsize";
 
 function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
     const [sentence, setSentence] = useState(defaultSentence);
+
+
     function handleSentence(event) {
         setSentence(event.target.value)
     }
-
     useEffect(()=> {
         if (sentence === '') {
             setSentence(defaultSentence)
         }
-    })
+    }, [sentence])
+
+
+    const [fontPX, setFontPX] = useState(40);
+    function handleFontChange(newData) {
+        setFontPX(newData);
+      }
 
     return(
         <div className="homepage">
@@ -26,7 +34,11 @@ function Homepage() {
                 <input className='setting-text' typeof="text" placeholder="Type something"
                 onChange={handleSentence}
                 />
-                <h2 className='setting-size' font>Font size</h2>
+
+                <div className="setting-size">
+                    <FontSize onFontChange={handleFontChange} />
+                </div>
+                
             </div>
 
         </div>
