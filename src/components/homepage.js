@@ -22,6 +22,7 @@ function Homepage() {
     const [fontPX, setFontPX] = useState(40);
     function handleFontChange(newData) {
         setFontPX(newData);
+        console.log(fontPX);
       }
 
     return(
@@ -43,7 +44,7 @@ function Homepage() {
 
         </div>
 
-            <FontCard fontText={sentence} />
+            <FontCard fontText={sentence} fontSize={fontPX} />
         </div>
     )
 }
