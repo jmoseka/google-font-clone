@@ -30,6 +30,8 @@ function Homepage() {
             <div className="toolbar-search">
                 <h2>Search fonts</h2>
             </div>
+
+     
             <div className="toolbar-font-setting">
                 <input className='setting-text' typeof="text" placeholder="Type something"
                 onChange={handleSentence}

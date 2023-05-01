@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './fontsize.css'
 
 const FontSize = (props)=> {
     const defaultFontsize = 40;
