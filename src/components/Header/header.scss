@@ -1,0 +1,45 @@
+@import "/src/components/homepage.scss";
+
+$nav-font-size: 2rem;
+
+.header-container {
+    border-bottom: 1px solid $border-color;
+    height: 8rem;
+    margin: 0 $main-margin-ends;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.header-logo {
+    background-color: rebeccapurple;
+}
+
+.header-menu {
+    display: flex;
+    flex: .7;
+    background-color: aqua;
+
+    &_nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        font-size: $nav-font-size;
+        
+        li {
+            background-color: red;
+            height: 100%;
+            width: 17rem;
+            border: 2px solid yellow;
+        }
+    }
+
+    &_icons {
+        background-color: pink;
+    }
+}

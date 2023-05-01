@@ -1,11 +1,15 @@
+@import '/src/components/homepage.scss';
+
 .font-card {
     border: 1px solid black;
     width: fit-content;
     text-align: left;
     padding: 1rem 2rem;
     height: 20rem;
-}
 
-.font-name {
-    line-height: 0;
+
+    &_name {
+        line-height: 0;
+        color: red;
+    }
 }

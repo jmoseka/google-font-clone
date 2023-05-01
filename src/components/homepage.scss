@@ -1,0 +1,30 @@
+$bg-light-color:#ffffff;
+$bg-dark-color: #202124;
+$border-color: #e6e7ea;
+$main-margin-ends: 8rem;
+
+$margin-small-height: 2.4rem;
+$margin-small-middle-height: 3rem;
+$margin-medium-height: 8.4rem;
+
+.center-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-theme {
+    background-color: $bg-light-color;
+}
+
+.dark-theme {
+    background-color: $bg-dark-color;
+}
+
+.homepage {
+    margin: 0px $main-margin-ends;
+}
+
+.fontcard-container {
+    margin-top: $margin-medium-height;
+}
