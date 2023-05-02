@@ -11,10 +11,10 @@ const Header = () => {
 
                 <div className='header-menu'>
                     <ul className='header-menu_nav'>
-                    <li className='center-item'>Fonts</li>
-                    <li className='center-item'>Icons</li>
-                    <li className='center-item'>Knowledge</li>
-                    <li className='center-item'>FAQ</li>
+                    <li className='center-item active-nav-link'>Fonts</li>
+                    <li className='center-item nav-link'>Icons</li>
+                    <li className='center-item nav-link'>Knowledge</li>
+                    <li className='center-item nav-link'>FAQ</li>
                     </ul>
 
                 <div className='header-menu_icons'>

@@ -1,6 +1,6 @@
 @import "/src/components/homepage.scss";
 
-$nav-font-size: 2rem;
+$nav-font-size: 2.18rem;
 
 .header-container {
     border-bottom: 1px solid $border-color;
@@ -15,13 +15,15 @@ $nav-font-size: 2rem;
 }
 
 .header-logo {
-    background-color: rebeccapurple;
+    color: $dark-gray;
 }
 
 .header-menu {
     display: flex;
     flex: .7;
-    background-color: aqua;
+    color: $dark-gray;
+    font-weight: 500;
+    letter-spacing: .5px;
 
     &_nav {
         display: flex;
@@ -32,14 +34,22 @@ $nav-font-size: 2rem;
         font-size: $nav-font-size;
         
         li {
-            background-color: red;
+            cursor: pointer;
             height: 100%;
             width: 17rem;
-            border: 2px solid yellow;
         }
     }
 
     &_icons {
         background-color: pink;
+    }
+}
+
+.nav-link {
+
+    &:hover {
+        background-color: $light-gray;
+        color: $color-black;
+        transition: $transition-ease;
     }
 }

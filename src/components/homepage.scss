@@ -1,17 +1,41 @@
 $bg-light-color:#ffffff;
 $bg-dark-color: #202124;
 $border-color: #e6e7ea;
-$main-margin-ends: 8rem;
 
+$color-black: #000;
+$dark-gray: #606469;
+$light-gray: #e4e4e4;
+
+$secondary-color: #1a73e8;
+$secondary-color-dark: rgb(58, 28, 181);
+$secondary-color-hover-light: #e3eefc;
+
+$main-margin-ends: 8rem;
 $margin-small-height: 2.4rem;
 $margin-small-middle-height: 3rem;
 $margin-medium-height: 8.4rem;
 
+$transition-ease: all 0.3s ease;
+
+/*helper class*/
 .center-item {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.active-nav-link {
+    border-bottom: 3px solid $secondary-color;
+    color: $secondary-color;
+
+    &:hover {
+        color: $secondary-color-dark;
+        background-color: $secondary-color-hover-light;
+    }
+}
+
+
+/************/
 
 .light-theme {
     background-color: $bg-light-color;
