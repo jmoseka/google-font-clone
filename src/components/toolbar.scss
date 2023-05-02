@@ -1,9 +1,12 @@
-.toolbar {
+@import './homepage.scss';
+
+.toolbar-menu {
     border: 0.1rem solid black;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: $margin-small-height;
 }
 
 .toolbar-search {
