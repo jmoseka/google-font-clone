@@ -7,7 +7,7 @@ $dark-gray: #606469;
 $light-gray: #e4e4e4;
 
 $secondary-color: #1a73e8;
-$secondary-color-dark: rgb(58, 28, 181);
+$secondary-color-dark: rgb(58, 28, 201);
 $secondary-color-hover-light: #e3eefc;
 
 $main-margin-ends: 8rem;
@@ -25,7 +25,7 @@ $transition-ease: all 0.3s ease;
 }
 
 .active-nav-link {
-    border-bottom: 3px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
     color: $secondary-color;
 
     &:hover {

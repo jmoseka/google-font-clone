@@ -1,10 +1,14 @@
 @import "/src/components/homepage.scss";
 
-$nav-font-size: 2.18rem;
+$header-size: 6.5rem;
+$nav-font-size: 1.6rem;
+$nav-link-width: 12rem;
+$header-icon-size: 1.8rem;
+$header-icon-padding-size: 4rem;
 
 .header-container {
     border-bottom: 1px solid $border-color;
-    height: 8rem;
+    height: $header-size;
     margin: 0 $main-margin-ends;
 }
 
@@ -15,13 +19,14 @@ $nav-font-size: 2.18rem;
 }
 
 .header-logo {
+    background-color:gray;
     color: $dark-gray;
 }
 
 .header-menu {
     display: flex;
-    flex: .7;
     color: $dark-gray;
+    justify-content: flex-end;
     font-weight: 500;
     letter-spacing: .5px;
 
@@ -30,18 +35,37 @@ $nav-font-size: 2.18rem;
         list-style: none;
         margin: 0;
         padding: 0;
+
         
         font-size: $nav-font-size;
         
         li {
             cursor: pointer;
             height: 100%;
-            width: 17rem;
+            width: $nav-link-width;
         }
     }
 
     &_icons {
-        background-color: pink;
+        display: flex;
+        justify-content: space-between;
+        font-size: $header-icon-size;
+        
+        span {
+            margin: auto 0;
+            border: 2px solid palevioletred;
+            border-radius: 50%;
+            width: $header-icon-padding-size;
+            height: $header-icon-padding-size;
+
+            &:nth-child(2) {
+                /* Styles for the middle element */
+                margin: auto 5rem;
+              }
+        }
+
+        
+        
     }
 }
 

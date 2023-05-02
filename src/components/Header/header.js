@@ -1,4 +1,7 @@
 import './header.scss'
+import { FaEllipsisV } from 'react-icons/fa';
+import { GiMoon } from 'react-icons/gi';
+import { TfiLayoutGrid2Alt } from 'react-icons/tfi';
 
 const Header = () => {
 
@@ -16,12 +19,15 @@ const Header = () => {
                     <li className='center-item nav-link'>Knowledge</li>
                     <li className='center-item nav-link'>FAQ</li>
                     </ul>
-
-                <div className='header-menu_icons'>
-                    <span>menu bar</span>
-                    <span>switch theme</span>
-                    <span>selected families</span>
-                </div>
+                    
+                    <div className='header-menu_icons'>
+                        <span className='header-menu_icons-ellipsis center-item'>
+                            <FaEllipsisV />
+                            </span>
+                    
+                        <span className='header-menu_icons-themeSetting center-item'><GiMoon /></span>
+                        <span className='header-menu_icons-selectedFam center-item'><TfiLayoutGrid2Alt /></span>
+                    </div>
 
                 </div>
             </div>
