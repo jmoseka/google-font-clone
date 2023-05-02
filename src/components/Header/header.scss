@@ -4,18 +4,18 @@ $header-size: 6.5rem;
 $nav-font-size: 1.6rem;
 $nav-link-width: 12rem;
 $header-icon-size: 1.8rem;
-$header-icon-padding-size: 4rem;
+$header-icon-padding-size: 4.2rem;
 
 .header-container {
     border-bottom: 1px solid $border-color;
     height: $header-size;
-    margin: 0 $main-margin-ends;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    margin: 0 $main-margin-ends;
 }
 
 .header-logo {
@@ -29,6 +29,7 @@ $header-icon-padding-size: 4rem;
     justify-content: flex-end;
     font-weight: 500;
     letter-spacing: .5px;
+    cursor: pointer;
 
     &_nav {
         display: flex;
@@ -40,7 +41,6 @@ $header-icon-padding-size: 4rem;
         font-size: $nav-font-size;
         
         li {
-            cursor: pointer;
             height: 100%;
             width: $nav-link-width;
         }
@@ -53,16 +53,22 @@ $header-icon-padding-size: 4rem;
         
         span {
             margin: auto 0;
-            border: 2px solid palevioletred;
-            border-radius: 50%;
             width: $header-icon-padding-size;
             height: $header-icon-padding-size;
 
             &:nth-child(2) {
                 /* Styles for the middle element */
-                margin: auto 5rem;
-              }
+                margin: auto 4.4rem;
+             }
+
+            &:hover {
+                border-radius: 50%;
+                color: $color-black;
+                background-color: $light-gray;
+            }
         }
+
+
 
         
         
