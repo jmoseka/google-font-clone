@@ -26,7 +26,9 @@ const Header = () => {
                             </span>
                     
                         <span className='header-menu_icons-themeSetting center-item'><GiMoon /></span>
-                        <span className='header-menu_icons-selectedFam center-item'><TfiLayoutGrid2Alt /></span>
+                        <span className='header-menu_icons-selectedFam center-item'>
+                            <span className='red-dot'></span>
+                            <TfiLayoutGrid2Alt /></span>
                     </div>
 
                 </div>
