@@ -23,16 +23,16 @@ function Homepage() {
 
     function handleFontChange(newData) {
         setFontPX(newData);
-      }
+    }
 
-    useEffect(()=> {
+    useEffect(() => {
         if (sentence === '') {
             setSentence(defaultSentence)
         }
     }, [sentence])
 
 
-    return(
+    return (
         <div className="main light-theme">
             <Header />
             <div className="homepage">
@@ -43,37 +43,39 @@ function Homepage() {
                         <AiOutlineSearch />
                         <input type="text" placeholder="Search fonts" />
                     </div>
-                    
+
                     {/* font settings */}
                     <div className="toolbar-text">
 
-                    {/* font type sentence */}
-                        <button className="sentence">Sentence</button>
-                        <RiArrowDownSFill />
-                        <input className='setting-text' typeof="text" placeholder="Type something"
-                        onChange={handleSentence}
-                        />
+                        {/* font type sentence */}
+                        <div className="toolbar-type-text">
+                            <button className="sentence">Sentence</button>
+                            <RiArrowDownSFill />
+                            <input className='setting-text' typeof="text" placeholder="Type something"
+                                onChange={handleSentence}
+                            />
+                        </div>
 
-                    {/* font setting size */}
-                    <div className="toolbar-setting-size">
-                        <FontSize onFontChange={handleFontChange} />
-                     </div>
-                
+                        {/* font setting size */}
+                        <div className="toolbar-setting-size">
+                            <FontSize onFontChange={handleFontChange} />
+                        </div>
+
+                    </div>
+
                 </div>
 
-        </div>
+                <div className="fontcard-container">
+                    {
+                        fontsData.map((data) => {
+                            return <FontCard key={data.id} fontText={sentence} fontSize={fontPX} fontsdata={data} />
+                        })
+                    }
 
-        <div className="fontcard-container">
-        {
-            fontsData.map((data) => {
-                return <FontCard key={data.id} fontText={sentence} fontSize={fontPX} fontsdata={data} />
-            })
-        }
+                </div>
 
-        </div>
-        
-        
-        </div>
+
+            </div>
         </div>
     )
 }
