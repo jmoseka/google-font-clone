@@ -5,6 +5,8 @@ import { useEffect, useState } from "react"
 import FontSize from "./toolbar/fontsize/fontsize";
 import fontsData from './data.js';
 import Header from "./Header/header";
+import { AiOutlineSearch } from "react-icons/ai";
+import { RiArrowDownSFill } from "react-icons/ri";
 
 function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
@@ -29,21 +31,26 @@ function Homepage() {
         <div className="main light-theme">
             <Header />
             <div className="homepage">
-                <div className="toolbar-menu">
+                <div className="toolbar">
+
                     {/* search fonts */}
-                    <div className="toolbar-search">
-                        <h2>Search fonts</h2>
+                    <div className="toolbar-search-font">
+                        <AiOutlineSearch />
+                        <input type="text" placeholder="Search fonts" />
                     </div>
                     
                     {/* font settings */}
-                    <div className="toolbar-font-setting">
+                    <div className="toolbar-text">
+                        
+                        <button className="sentence">Sentence</button>
+                        <RiArrowDownSFill />
                         <input className='setting-text' typeof="text" placeholder="Type something"
                         onChange={handleSentence}
                         />
                         
-                    <div className="setting-size">
+                    <div className="toolbar-setting-size">
                         <FontSize onFontChange={handleFontChange} />
-                        </div>
+                     </div>
                 
                 </div>
 

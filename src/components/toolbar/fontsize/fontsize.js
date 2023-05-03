@@ -1,5 +1,7 @@
 import { useState } from "react";
 import './fontsize.scss'
+import { RiArrowDownSFill } from "react-icons/ri";
+import { GrPowerReset } from "react-icons/gr";
 
 const FontSize = (props)=> {
     const defaultFontsize = 40;
@@ -18,7 +20,7 @@ const FontSize = (props)=> {
     return (
         <>
         <div className="dropdown">
-      <button onClick={() => setIsOpen(!isOpen)}>{fontSize}</button>
+      <button onClick={() => setIsOpen(!isOpen)}>{fontSize} <RiArrowDownSFill /></button>
       {isOpen && (
         <div className="dropdown-content">
           {menuItems.map((item, index) => (
@@ -26,8 +28,10 @@ const FontSize = (props)=> {
           ))}
         </div>
       )}
+      
     </div>
         <input type="range" min="8" max="280" value={fontSize} onChange={handleScrollBarFont} />
+        <GrPowerReset />
         </>
     )
 }

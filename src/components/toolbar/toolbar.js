@@ -1,19 +1,32 @@
-// import './toolbar.css'
+import './toolbar.scss'
 
-// function Toolbar() {
+function Toolbar() {
 
-//     return(
-//         <div className="toolbar">
-//             <div className="toolbar-search">
-//                 <h2>Search fonts</h2>
-//             </div>
-//             <div className="toolbar-font-setting">
-//                 <input className='setting-text' typeof="text" placeholder="Type something" />
-//                 <h2 className='setting-size' font>Font size</h2>
-//             </div>
+    return (
 
-//         </div>
-//     )
-// }
+        <div className="toolbar">
 
-// export default Toolbar
+            {/* search fonts */}
+            <div className="toolbar-search-font">
+                <AiOutlineSearch />
+                        <input type="text" placeholder="Search fonts" />
+                    </div>
+                    
+                    {/* font settings */}
+                    <div className="toolbar-text">
+                        
+                        <button className="sentence">Sentence</button>
+                        <RiArrowDownSFill />
+                        <input className='setting-text' typeof="text" placeholder="Type something"
+                        onChange={handleSentence}
+                        />
+                        
+                    <div className="toolbar-setting-size">
+                        <FontSize onFontChange={handleFontChange} />
+                     </div>
+                     </div>
+        </div>
+    )
+}
+
+export default Toolbar;
