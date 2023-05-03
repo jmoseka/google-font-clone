@@ -1,7 +1,11 @@
-import FontCard from "./card/fontcard"
-import './toolbar.scss'
-import './homepage.scss'
-import { useEffect, useState } from "react"
+import FontCard from "./card/fontcard";
+import './toolbar.scss';
+import './homepage.scss';
+import "./toolbar/toolbar.scss";
+import "./toolbar/toolbar-text.scss";
+import "./toolbar/searchfont.scss";
+import "./toolbar/typesentence.scss";
+import { useEffect, useState } from "react";
 import FontSize from "./toolbar/fontsize/fontsize";
 import fontsData from './data.js';
 import Header from "./Header/header";
@@ -27,6 +31,7 @@ function Homepage() {
         }
     }, [sentence])
 
+
     return(
         <div className="main light-theme">
             <Header />
@@ -41,13 +46,15 @@ function Homepage() {
                     
                     {/* font settings */}
                     <div className="toolbar-text">
-                        
+
+                    {/* font type sentence */}
                         <button className="sentence">Sentence</button>
                         <RiArrowDownSFill />
                         <input className='setting-text' typeof="text" placeholder="Type something"
                         onChange={handleSentence}
                         />
-                        
+
+                    {/* font setting size */}
                     <div className="toolbar-setting-size">
                         <FontSize onFontChange={handleFontChange} />
                      </div>

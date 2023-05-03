@@ -1,0 +1,13 @@
+@import "/src/components/homepage.scss";
+
+.toolbar-section {
+    margin-top: $margin-small-height;
+    background-color: brown;
+    width: 100%;
+}
+
+.toolbar {
+    background-color: brown;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+}
