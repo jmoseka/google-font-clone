@@ -49,8 +49,12 @@ function Homepage() {
 
                         {/* font type sentence */}
                         <div className="toolbar-type-text toolbar-item-input">
-                            <button className="sentence">Sentence</button>
-                            <RiArrowDownSFill />
+                            <button className="toolbar-btn sentence">
+                                <span>Sentence</span>
+                                <span><RiArrowDownSFill /></span>
+                            </button>
+
+
                             <input className='setting-text' typeof="text" placeholder="Type something"
                                 onChange={handleSentence}
                             />

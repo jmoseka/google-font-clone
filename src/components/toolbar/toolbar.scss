@@ -3,14 +3,39 @@
 $toolbar-radius: 3rem;
 $toolbar-height: 5.8rem;
 
-$toolbar-div-padding: 1.6rem;
+$toolbar-div-padding: 1.9rem;
 
+$toolbar-btn: 1rem;
+$toolbar-btn-gap: .4rem;
+$toolbar-btn-radius: .5rem;
+
+/*toolbar utilities*/
 .toolbar-item-input {
     display: flex;
     align-items: center;
     padding: 0 $toolbar-div-padding;
     gap: 1.1rem;
     font-weight: 600;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: $toolbar-btn-gap;
+    color: $dark-gray;
+    background-color: $color-white;
+    padding: $toolbar-btn;
+    font-weight: 600;
+    border-radius: $toolbar-btn-radius;
+    cursor: pointer;
+    transition: $transition-ease;
+    outline: none;
+    border: none;
+
+    &:hover {
+        background-color: rgba($secondary-color, 10%);
+        color: $secondary-color;
+    }
 }
 
 .toolbar-section {
