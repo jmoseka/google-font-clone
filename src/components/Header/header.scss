@@ -4,7 +4,7 @@ $header-size: 6.5rem;
 $nav-font-size: 1.6rem;
 $nav-link-width: 12rem;
 $header-icon-size: 1.8rem;
-$header-icon-padding-size: 4.2rem;
+$header-icon-padding-size: 4.4rem;
 
 .header-container {
     border-bottom: 1px solid $border-color;
@@ -58,7 +58,7 @@ $header-icon-padding-size: 4.2rem;
 
             &:nth-child(2) {
                 /* Styles for the middle element */
-                margin: auto 4.4rem;
+                margin: auto 4rem;
              }
 
             &:hover {
@@ -69,12 +69,12 @@ $header-icon-padding-size: 4.2rem;
 
             &:last-child {
                 .red-dot {
-                    background-color: red;
+                    background-color: $color-red;
                     position: absolute;
-                    right: 12%;
+                    right: 13%;
                     bottom: 70%;
-                    width: .5rem;
-                    height: .5rem;
+                    width: .48rem;
+                    height: .48rem;
                     border-radius: 50%;
                 }
             }
