@@ -39,6 +39,7 @@ $transition-ease: all 0.3s ease;
 
 /************/
 
+
 .light-theme {
     background-color: $bg-light-color;
 }
@@ -48,8 +49,7 @@ $transition-ease: all 0.3s ease;
 }
 
 .homepage {
-    margin: 0px $main-margin-ends;
-    background-color: red;
+    margin: 0 $main-margin-ends;
 }
 
 .fontcard-container {

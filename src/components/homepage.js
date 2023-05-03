@@ -39,16 +39,16 @@ function Homepage() {
                 <div className="toolbar">
 
                     {/* search fonts */}
-                    <div className="toolbar-search-font">
-                        <AiOutlineSearch />
-                        <input type="text" placeholder="Search fonts" />
+                    <div className="toolbar-search-font toolbar-item-input">
+                        <div className="search-icon"><AiOutlineSearch /></div>
+                        <input className="search-input" type="text" placeholder="Search fonts" />
                     </div>
 
                     {/* font settings */}
                     <div className="toolbar-text">
 
                         {/* font type sentence */}
-                        <div className="toolbar-type-text">
+                        <div className="toolbar-type-text toolbar-item-input">
                             <button className="sentence">Sentence</button>
                             <RiArrowDownSFill />
                             <input className='setting-text' typeof="text" placeholder="Type something"

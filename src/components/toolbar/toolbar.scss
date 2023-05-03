@@ -1,13 +1,29 @@
 @import "/src/components/homepage.scss";
 
+$toolbar-radius: 3rem;
+$toolbar-height: 5.8rem;
+
+$toolbar-div-padding: 1.6rem;
+
+.toolbar-item-input {
+    display: flex;
+    align-items: center;
+    padding: 0 $toolbar-div-padding;
+    gap: 1.1rem;
+    font-weight: 600;
+}
+
 .toolbar-section {
-    margin-top: $margin-small-height;
     background-color: brown;
     width: 100%;
 }
 
 .toolbar {
-    background-color: brown;
+    margin-top: $margin-small-height;
     display: grid;
     grid-template-columns: .5fr 1fr;
+    border: 1px solid $border-color;
+    border-radius: $toolbar-radius;
+    height: $toolbar-height;
+    color: $dark-gray;
 }
