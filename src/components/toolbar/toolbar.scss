@@ -10,6 +10,9 @@ $toolbar-btn-gap: .4rem;
 $toolbar-btn-radius: .5rem;
 $toolbar-btn-font-size: 1.47rem;
 
+$input-padding: 1.2rem;
+$input-size: 1.7rem;
+
 /*toolbar utilities*/
 .toolbar-item-input {
     display: flex;
@@ -39,6 +42,14 @@ $toolbar-btn-font-size: 1.47rem;
         background-color: rgba($secondary-color, 10%);
         color: $secondary-color;
     }
+}
+
+.toolbar-input {
+    padding: $input-padding 0;
+    border: 0;
+    outline: none;
+    width: 100%;
+    font-size: $input-size;
 }
 
 .toolbar-section {

@@ -41,7 +41,7 @@ function Homepage() {
                     {/* search fonts */}
                     <div className="toolbar-search-font toolbar-item-input">
                         <div className="search-icon"><AiOutlineSearch /></div>
-                        <input className="search-input" type="text" placeholder="Search fonts" />
+                        <input className="search-input toolbar-input" type="text" placeholder="Search fonts" />
                     </div>
 
                     {/* font settings */}
@@ -55,7 +55,7 @@ function Homepage() {
                             </button>
 
 
-                            <input className='setting-text' typeof="text" placeholder="Type something"
+                            <input className='setting-text toolbar-input' typeof="text" placeholder="Type something"
                                 onChange={handleSentence}
                             />
                         </div>
