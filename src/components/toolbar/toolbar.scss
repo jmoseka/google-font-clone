@@ -8,6 +8,7 @@ $toolbar-div-padding: 1.9rem;
 $toolbar-btn: 1rem;
 $toolbar-btn-gap: .4rem;
 $toolbar-btn-radius: .5rem;
+$toolbar-btn-font-size: 1.47rem;
 
 /*toolbar utilities*/
 .toolbar-item-input {
@@ -31,6 +32,8 @@ $toolbar-btn-radius: .5rem;
     transition: $transition-ease;
     outline: none;
     border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: $toolbar-btn-font-size;
 
     &:hover {
         background-color: rgba($secondary-color, 10%);

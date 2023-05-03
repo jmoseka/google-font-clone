@@ -51,7 +51,7 @@ function Homepage() {
                         <div className="toolbar-type-text toolbar-item-input">
                             <button className="toolbar-btn sentence">
                                 <span>Sentence</span>
-                                <span><RiArrowDownSFill /></span>
+                                <span className="arrow-down"><RiArrowDownSFill /></span>
                             </button>
 
 
