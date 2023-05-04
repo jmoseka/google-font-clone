@@ -39,7 +39,7 @@ $input-size: 1.7rem;
     font-family: 'Inter', sans-serif;
     font-size: $toolbar-btn-font-size;
 
-    &:hover {
+    &:hover{
         background-color: rgba($secondary-color, 10%);
         color: $secondary-color;
     }
@@ -51,6 +51,11 @@ $input-size: 1.7rem;
     outline: none;
     width: 100%;
     font-size: $input-size;
+    color: $color-font;
+
+    &:focus::placeholder {
+        color: $secondary-color;
+    }
 }
 
 .toolbar-section {

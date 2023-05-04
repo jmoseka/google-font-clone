@@ -7,6 +7,10 @@ $color-white: #ffffff;
 $dark-gray: #606469;
 $light-gray: #e4e4e4;
 
+$color-font-dark: #212121;
+$color-font: #2c2c2c;
+
+
 $color-red:#c84139;
 
 $secondary-color: #1a73e8;
@@ -59,4 +63,8 @@ $transition-ease: all 0.3s ease;
 
 .fontcard-container {
     margin-top: $margin-medium-height;
+}
+
+p {
+    color: $color-font
 }
