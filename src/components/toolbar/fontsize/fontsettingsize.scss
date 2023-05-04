@@ -4,8 +4,18 @@
 .font-setting-size {
     border-left: 1px solid $border-color;
     flex: 1;
-    background-color: orangered;
+    display: flex;
+    align-items: center;
+    padding: 0 $toolbar-div-padding;
 }
+
+
+.reset-icon {
+    font-size: 1.6rem;
+    color: $dark-gray;
+    margin-left: auto;
+}
+
 .dropdown-content {
     position: absolute;
     background-color: yellow;

@@ -1,19 +1,14 @@
 @import "/src/components/homepage.scss";
 
 $input-size: 1.78rem;
-$input-icon: 2rem;
 $input-padding: 1.2rem;
 $input-placeholder: 2rem;
 
 .toolbar-search-font {
     flex: .5;
     border-right: 1px solid $border-color;
-    background-color: green;
 }
 
-.search-icon {
-    font-size: $input-icon;
-}
 
 .search-input {
     

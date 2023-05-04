@@ -40,7 +40,7 @@ function Homepage() {
 
                     {/* search fonts */}
                     <div className="toolbar-search-font toolbar-item-input">
-                        <div className="search-icon"><AiOutlineSearch /></div>
+                        <div className="search-icon toolbar-icon"><AiOutlineSearch /></div>
                         <input className="search-input toolbar-input" type="text" placeholder="Search fonts" />
                     </div>
 
@@ -50,7 +50,7 @@ function Homepage() {
                         {/* font type sentence */}
                         <div className="font-sentence toolbar-item-input">
                             <button className="toolbar-btn sentence">
-                                <span>Sentence</span>
+                                <span className="toolbar-lbl">Sentence</span>
                                 <span className="arrow-down"><RiArrowDownSFill /></span>
                             </button>
                             <input className='setting-text toolbar-input' typeof="text" placeholder="Type something"

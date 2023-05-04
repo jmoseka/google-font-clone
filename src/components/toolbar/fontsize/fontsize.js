@@ -21,7 +21,7 @@ const FontSize = (props) => {
     <>
       <div className="dropdown">
         <button className="toolbar-btn" onClick={() => setIsOpen(!isOpen)}>
-          <span>{fontSize}</span>
+          <span className="toolbar-lbl">{`${fontSize}px`}</span>
           <span className="arrow-down"><RiArrowDownSFill /></span>
         </button>
         {isOpen && (
@@ -34,7 +34,9 @@ const FontSize = (props) => {
 
       </div>
       <input type="range" min="8" max="280" value={fontSize} onChange={handleScrollBarFont} />
+      <div className="reset-icon">
       <GrPowerReset />
+      </div>
     </>
   )
 }

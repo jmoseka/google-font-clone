@@ -1,18 +1,31 @@
 @import "/src/components/homepage.scss";
 
 $toolbar-radius: 3rem;
-$toolbar-height: 5.8rem;
+$toolbar-height: 5rem;
 
-$toolbar-div-padding: 1.9rem;
-
-$toolbar-btn: 1rem;
+$toolbar-btn: .7rem;
+$toolbar-btn-padding-x: .9rem;
+$toolbar-btn-padding-y: .7rem;
 $toolbar-btn-gap: .4rem;
 $toolbar-btn-radius: .5rem;
 $toolbar-btn-font-size: 1.47rem;
 
 
-$input-padding: 1.2rem;
-$input-size: 1.7rem;
+$input-padding: .7rem;
+$input-size: 1.6rem;
+$input-icon: 2rem;
+
+$toolbar-lbl-size: 1.4rem;
+
+.toolbar {
+    margin-top: $margin-small-height;
+    display: flex;
+    border: 1px solid $border-color;
+    border-radius: $toolbar-radius;
+    color: $dark-gray;
+    width: 100%;
+    height: $toolbar-height;
+}
 
 /*toolbar utilities*/
 .toolbar-item-input {
@@ -23,13 +36,21 @@ $input-size: 1.7rem;
     font-weight: 600;
 }
 
+.toolbar-icon {
+    font-size: $input-icon;
+}
+
+.toolbar-lbl {
+    font-size: $toolbar-lbl-size;
+}
+
 .toolbar-btn {
     display: flex;
     align-items: center;
     gap: $toolbar-btn-gap;
     color: $dark-gray;
     background-color: $color-white;
-    padding: $toolbar-btn;
+    padding: $toolbar-btn-padding-y $toolbar-btn-padding-x;
     font-weight: 600;
     border-radius: $toolbar-btn-radius;
     cursor: pointer;
@@ -60,15 +81,6 @@ $input-size: 1.7rem;
 
 .toolbar-section {
     background-color: brown;
-    width: 100%;
-}
-
-.toolbar {
-    margin-top: $margin-small-height;
-    display: flex;
-    border: 1px solid $border-color;
-    border-radius: $toolbar-radius;
-    color: $dark-gray;
     width: 100%;
 }
 
