@@ -65,10 +65,16 @@ $input-size: 1.7rem;
 
 .toolbar {
     margin-top: $margin-small-height;
-    display: grid;
-    grid-template-columns: .5fr 1fr;
+    display: flex;
     border: 1px solid $border-color;
     border-radius: $toolbar-radius;
-    height: $toolbar-height;
     color: $dark-gray;
+    width: 100%;
 }
+
+// .toolbar-search-font,
+// .toolbar-font-group {
+//     flex: ;
+//     // flex-grow: 1;
+//     // flex-basis: 0;
+// }

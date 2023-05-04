@@ -1,8 +1,10 @@
 @import '/src/components/homepage.scss';
 
 
-.toolbar-setting-size {
-    background-color: yellow;
+.font-setting-size {
+    border-left: 1px solid $border-color;
+    flex: 1;
+    background-color: orangered;
 }
 .dropdown-content {
     position: absolute;

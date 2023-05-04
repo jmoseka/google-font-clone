@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './fontsize.scss'
+import './fontsettingsize.scss'
 import { RiArrowDownSFill } from "react-icons/ri";
 import { GrPowerReset } from "react-icons/gr";
 

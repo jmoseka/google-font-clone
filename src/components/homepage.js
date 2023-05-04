@@ -2,9 +2,9 @@ import FontCard from "./card/fontcard";
 import './toolbar.scss';
 import './homepage.scss';
 import "./toolbar/toolbar.scss";
-import "./toolbar/toolbar-text.scss";
 import "./toolbar/searchfont.scss";
-import "./toolbar/typesentence.scss";
+import "./toolbar/toolbar-font-group.scss";
+import "./toolbar/fontsentence.scss";
 import { useEffect, useState } from "react";
 import FontSize from "./toolbar/fontsize/fontsize";
 import fontsData from './data.js';
@@ -45,23 +45,21 @@ function Homepage() {
                     </div>
 
                     {/* font settings */}
-                    <div className="toolbar-text">
+                    <div className="toolbar-font-group">
 
                         {/* font type sentence */}
-                        <div className="toolbar-type-text toolbar-item-input">
+                        <div className="font-sentence toolbar-item-input">
                             <button className="toolbar-btn sentence">
                                 <span>Sentence</span>
                                 <span className="arrow-down"><RiArrowDownSFill /></span>
                             </button>
-
-
                             <input className='setting-text toolbar-input' typeof="text" placeholder="Type something"
                                 onChange={handleSentence}
                             />
                         </div>
 
                         {/* font setting size */}
-                        <div className="toolbar-setting-size">
+                        <div className="font-setting-size">
                             <FontSize onFontChange={handleFontChange} />
                         </div>
 
