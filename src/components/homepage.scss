@@ -3,19 +3,28 @@ $bg-dark-color: #202124;
 $border-color: #e6e7ea;
 
 $color-black: #000;
+$color-white: #ffffff;
 $dark-gray: #606469;
 $light-gray: #e4e4e4;
 
+$color-font-dark: #212121;
+$color-font: #2c2c2c;
+
+
+$color-red:#c84139;
+
 $secondary-color: #1a73e8;
-$secondary-color-dark: rgb(58, 28, 181);
+$secondary-color-dark: rgb(58, 28, 201);
 $secondary-color-hover-light: #e3eefc;
 
-$main-margin-ends: 8rem;
+$main-margin-ends: 6.7rem;
 $margin-small-height: 2.4rem;
 $margin-small-middle-height: 3rem;
 $margin-medium-height: 8.4rem;
 
 $transition-ease: all 0.3s ease;
+
+$toolbar-div-padding: 1.8rem;
 
 /*helper class*/
 .center-item {
@@ -25,7 +34,7 @@ $transition-ease: all 0.3s ease;
 }
 
 .active-nav-link {
-    border-bottom: 3px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
     color: $secondary-color;
 
     &:hover {
@@ -34,8 +43,13 @@ $transition-ease: all 0.3s ease;
     }
 }
 
+.arrow-down {
+    color: $secondary-color;
+    font-size: 1.7rem;
+}
 
 /************/
+
 
 .light-theme {
     background-color: $bg-light-color;
@@ -46,9 +60,13 @@ $transition-ease: all 0.3s ease;
 }
 
 .homepage {
-    margin: 0px $main-margin-ends;
+    margin: 0 $main-margin-ends;
 }
 
 .fontcard-container {
     margin-top: $margin-medium-height;
+}
+
+p {
+    color: $color-font
 }

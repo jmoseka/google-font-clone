@@ -1,17 +1,21 @@
 @import "/src/components/homepage.scss";
 
-$nav-font-size: 2.18rem;
+$header-size: 6.5rem;
+$nav-font-size: 1.6rem;
+$nav-link-width: 12rem;
+$header-icon-size: 1.8rem;
+$header-icon-padding-size: 4.4rem;
 
 .header-container {
     border-bottom: 1px solid $border-color;
-    height: 8rem;
-    margin: 0 $main-margin-ends;
+    height: $header-size;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     height: 100%;
+    margin: 0 $main-margin-ends;
 }
 
 .header-logo {
@@ -20,28 +24,66 @@ $nav-font-size: 2.18rem;
 
 .header-menu {
     display: flex;
-    flex: .7;
     color: $dark-gray;
+    justify-content: flex-end;
     font-weight: 500;
     letter-spacing: .5px;
+    cursor: pointer;
 
     &_nav {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
+
         
         font-size: $nav-font-size;
         
         li {
-            cursor: pointer;
             height: 100%;
-            width: 17rem;
+            width: $nav-link-width;
         }
     }
 
     &_icons {
-        background-color: pink;
+        display: flex;
+        justify-content: space-between;
+        font-size: $header-icon-size;
+        
+        span {
+            margin: auto 0;
+            width: $header-icon-padding-size;
+            height: $header-icon-padding-size;
+            position: relative;
+
+            &:nth-child(2) {
+                /* Styles for the middle element */
+                margin: auto 4rem;
+             }
+
+            &:hover {
+                border-radius: 50%;
+                color: $color-black;
+                background-color: $light-gray;
+            }
+
+            &:last-child {
+                .red-dot {
+                    background-color: $color-red;
+                    position: absolute;
+                    right: 13%;
+                    bottom: 70%;
+                    width: .48rem;
+                    height: .48rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+
+
+        
+        
     }
 }
 

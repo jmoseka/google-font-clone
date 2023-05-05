@@ -1,0 +1,55 @@
+@import '/src/components/homepage.scss';
+
+
+.font-setting-size {
+    border-left: 1px solid $border-color;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    //padding: 0 $toolbar-div-padding;
+}
+
+.dropdown {
+    padding-left: .7rem;
+}
+
+.fontsize-slider {
+    width: 80%;
+    display: flex;
+
+    input {
+        justify-content: start;
+        text-align: right;
+        text-align: start;
+        width: 90%;
+        //width: 100%;
+    }
+}
+
+
+.reset-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-left: 1px solid $border-color;
+    height: 100%;
+    width: 15%;
+    
+
+    &_container {
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+
+        &:hover {
+            background-color: $light-gray;
+        }
+    }
+
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: yellow;
+}
