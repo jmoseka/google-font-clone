@@ -10,37 +10,37 @@ const MenuOption = () => {
                 <div className="dropdown-option dropdown-option-category">
                     <span className="dropdown-lbl">Categories</span>
                     <span className="arrow-down">
-                    <RiArrowDownSFill />
+                        <RiArrowDownSFill />
                     </span>
                 </div>
 
                 <div className="dropdown-option dropdown-option-language">
                     <span className="dropdown-lbl"> Arabic</span>
                     <span className="arrow-down">
-                    <RiArrowDownSFill />
+                        <RiArrowDownSFill />
                     </span>
                 </div>
 
                 <div className="dropdown-option dropdown-option-styles">
-                <span className="dropdown-lbl">Number of styles</span>
+                    <span className="dropdown-lbl">Number of styles</span>
                     <span className="arrow-down">
-                    <RiArrowDownSFill />
+                        <RiArrowDownSFill />
                     </span>
                 </div>
             </div>
 
             <div className="checkbox-menu-option">
-                <div className="checkbox-option-variable">
-                <span>Show only variable fonts</span>
+                <div className="checkbox-option checkbox-option-variable">
+                    <span>Show only variable fonts</span>
                     <span className="info-icon">
-                    <AiOutlineInfoCircle />
+                        <AiOutlineInfoCircle />
                     </span>
                 </div>
 
-                <div className="checkbox-option-color-fonts">
-                <span>Show only color fonts</span>
+                <div className="checkbox-option checkbox-option-color-fonts">
+                    <span>Show only color fonts</span>
                     <span className="info-icon">
-                    <AiOutlineInfoCircle />
+                        <AiOutlineInfoCircle />
                     </span>
                 </div>
             </div>
