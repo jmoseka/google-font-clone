@@ -1,5 +1,4 @@
 import FontCard from "./card/fontcard";
-import './toolbar.scss';
 import './homepage.scss';
 import "./toolbar/toolbar.scss";
 import "./toolbar/searchfont.scss";
@@ -48,7 +47,7 @@ function Homepage() {
                     <div className="toolbar-font-group">
 
                         {/* font type sentence */}
-                        <div className="font-sentence toolbar-item-input">
+                        <div className="toolbar-item-input font-sentence">
                             <button className="toolbar-btn sentence">
                                 <span className="toolbar-lbl">Sentence</span>
                                 <span className="arrow-down"><RiArrowDownSFill /></span>

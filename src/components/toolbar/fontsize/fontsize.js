@@ -33,10 +33,15 @@ const FontSize = (props) => {
         )}
 
       </div>
-      <input type="range" min="8" max="280" value={fontSize} onChange={handleScrollBarFont} />
-      <div className="reset-icon">
-      <GrPowerReset />
+      <div className="fontsize-slider">
+        <input type="range" min="8" max="280" value={fontSize} onChange={handleScrollBarFont} />
       </div>
+
+      <button className="reset-btn center-item" type="button">
+        <div className="reset-btn_container center-item">
+          <GrPowerReset />
+        </div>
+      </button>
     </>
   )
 }
