@@ -46,6 +46,8 @@ $toolbar-div-padding: 1.8rem;
 .arrow-down {
     color: $secondary-color;
     font-size: 1.7rem;
+    display: flex;
+    align-items: center;
 }
 
 /************/

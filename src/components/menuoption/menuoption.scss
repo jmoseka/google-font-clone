@@ -1,0 +1,40 @@
+@import "/src/components/homepage.scss";
+
+.menuoption {
+    margin-top: $margin-small-middle-height;
+    display: flex;
+    align-items: center;
+    letter-spacing: .4px;
+    color: $dark-gray;
+    font-weight: 500;
+    gap: 2.2rem;
+}
+
+.dropdown-menu-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.checkbox-menu-option {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-option {
+    border: 1px solid $light-gray;
+    border-radius: 2rem;
+    padding: .5rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+
+    &:hover {
+        background-color: $secondary-color-hover-light;
+    }
+}
+
+.dropdown-lbl {
+    font-size: 1.4rem;
+}
