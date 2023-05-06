@@ -1,8 +1,15 @@
 @import '/src/components/homepage.scss';
 
+.fontcard-container {
+    background-color: purple;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
 .font-card {
     border: 1px solid black;
-    width: fit-content;
+    width: 20rem;
     text-align: left;
     padding: 1rem 2rem;
     height: 20rem;
