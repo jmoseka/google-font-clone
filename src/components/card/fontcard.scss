@@ -1,22 +1,28 @@
 @import '/src/components/homepage.scss';
 
 .fontcard-container {
-    background-color: purple;
+    width: 100%;
+    border: 3px solid black;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 33.33%);
 }
 
 .font-card {
-    border: 1px solid black;
-    width: 20rem;
+    border: 1px solid purple;
     text-align: left;
     padding: 1rem 2rem;
     height: 20rem;
+    width: 100%;
 
 
     &_name {
         line-height: 0;
         color: red;
+    }
+}
+
+@media(max-width: 1238px) {
+    .fontcard-container {
+        grid-template-columns: repeat(2, 50%);
     }
 }
