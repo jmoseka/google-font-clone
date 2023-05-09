@@ -5,7 +5,7 @@ function FontCard({fontsdata, fontText, fontSize}) {
 
     return (
             <div className="font-card">
-            <h2 className="font-card_name">{fontname}</h2>
+            <p className="font-card_name">{fontname}</p>
             <p className="font-card_owner">{fontowner}</p>
             <p className="font-card_text" style={{ fontSize: `${fontSize}px`,
             fontFamily: `'${fontname}', ${fontfamily}`
