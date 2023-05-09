@@ -7,6 +7,7 @@
     grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
     gap: 2rem;
+    margin-bottom: $margin-medium-height;
 }
 
 .font-card {

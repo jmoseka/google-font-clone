@@ -23,6 +23,7 @@ function Homepage() {
     }
 
     function handleFontChange(newData) {
+        console.log(newData);
         setFontPX(newData);
     }
 
