@@ -3,7 +3,7 @@ import './fontsettingsize.scss'
 import { RiArrowDownSFill } from "react-icons/ri";
 import { GrPowerReset } from "react-icons/gr";
 
-const FontSize = (props) => {
+const FontSize = ({onFontChange}) => {
   const defaultFontsize = 40;
 
   const [fontSize, setFontSize] = useState(defaultFontsize)
@@ -13,9 +13,10 @@ const FontSize = (props) => {
   const handleScrollBarFont = (event) => {
     const font = event.target.value;
     setFontSize(font)
+    onFontChange(fontSize)
   }
-
-  props.onFontChange(fontSize)
+  
+  //onFontChange(fontSize)
 
   return (
     <>

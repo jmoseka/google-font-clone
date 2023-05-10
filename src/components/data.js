@@ -7,6 +7,8 @@ const fontsData = [
         fontName: 'Roboto',
         fontfamily: 'sans-serif',
         fontSize: 40,
+        style: 12,
+        variable: 0,
      },
 
     {
@@ -16,7 +18,9 @@ const fontsData = [
         text:'whereas recognition of the inherit dignity',
         fontName: 'Comme',
         fontfamily: 'sans-serif',
-        fontSize: 40
+        fontSize: 40,
+        style: 0,
+        variable: 1,
     },
 
     {
@@ -25,7 +29,9 @@ const fontsData = [
         fontowner:'Steve Matteson',
         text:'Whereas recognition of the inherit dignity',
         fontfamily: 'sans-serif',
-        fontSize: 40
+        fontSize: 40,
+        style: 0,
+        variable: 2,
     },
 
     {
@@ -34,7 +40,9 @@ const fontsData = [
         fontowner:' Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly',
         text:'whereas recognition of the inherit dignity',
         fontfamily: 'sans-serif',
-        fontSize: 40
+        fontSize: 40,
+        style: 0,
+        variable: 1,
     },
 
     {
@@ -43,7 +51,9 @@ const fontsData = [
         fontowner:'Lukasz Dziedzic',
         text:'whereas recognition of the inherit dignity',
         fontfamily: 'sans-serif',
-        fontSize: 40
+        fontSize: 40,
+        style: 10,
+        variable: 0,
     },
 
     {
@@ -52,7 +62,9 @@ const fontsData = [
         fontowner:'Indian Type Foundry, Jonny Pinhorn',
         text:'Whereas recognition of the inherit dignity',
         fontfamily: 'sans-serif',
-        fontSize: 40
+        fontSize: 40,
+        style: 18,
+        variable: 0,
     }
 ]
 

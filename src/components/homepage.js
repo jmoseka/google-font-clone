@@ -10,11 +10,13 @@ import fontsData from './data.js';
 import Header from "./Header/header";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RiArrowDownSFill } from "react-icons/ri";
+import MenuOption from "./menuoption/menuoption";
+
 
 function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
     const [sentence, setSentence] = useState(defaultSentence);
-    const [fontPX, setFontPX] = useState(40);
+    const [fontPX, setFontPX] = useState(30);
 
     function handleSentence(event) {
         setSentence(event.target.value)
@@ -65,6 +67,8 @@ function Homepage() {
                     </div>
 
                 </div>
+
+                <MenuOption />
 
                 <div className="fontcard-container">
                     {

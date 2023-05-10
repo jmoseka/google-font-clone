@@ -1,0 +1,61 @@
+@import "/src/components/homepage.scss";
+
+$option-menu-gap: .3rem;
+
+.menuoption {
+    margin-top: $margin-small-middle-height;
+    display: flex;
+    align-items: center;
+    letter-spacing: .4px;
+    color: $dark-gray;
+    
+    gap: 2.2rem;
+}
+
+.dropdown-menu-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-option {
+    border: 1px solid $light-gray;
+    border-radius: 2rem;
+    padding: .5rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $option-menu-gap;
+
+    &:hover {
+        background-color: $secondary-color-hover-light;
+        color: $secondary-color;
+    }
+}
+
+.dropdown-lbl {
+    font-size: 1.4rem;
+}
+
+.checkbox-menu-option {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.4rem;
+}
+
+.checkbox-option {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
+
+.info-icon {
+    display: flex;
+    align-items: center;
+    color: $color-font-dark;
+    font-size: 2rem;
+    font-weight: 600;
+}
