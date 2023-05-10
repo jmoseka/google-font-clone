@@ -15,10 +15,6 @@ const FontSize = ({onFontChange}) => {
     setFontSize(font)
     onFontChange(fontSize)
   }
-
-  const selectFontSize = (value) => {
-    setFontSize(value)
-  }
   
   //onFontChange(fontSize)
 
@@ -32,12 +28,14 @@ const FontSize = ({onFontChange}) => {
         {isOpen && (
           <div className="dropdown-content">
             {menuItems.map((item, index) => (
-              <p onClick={
+              <p className="dropdown-content_item center-item" onClick={
                 ()=>{
                   setFontSize(item)
                   onFontChange(fontSize)
                 }
-              } key={index} href="#">{item}</p>
+              } key={index} href="#">
+                <span>{item}</span>
+              </p>
             ))}
           </div>
         )}

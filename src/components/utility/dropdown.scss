@@ -1,0 +1,26 @@
+@import "/src/components/homepage.scss";
+
+.dropdown-content {
+    position: absolute;
+    margin-top: .7rem;
+    width: 8rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-height: 17rem;
+    overflow-y: scroll;
+    border-radius: .9rem;
+    background-color: $color-white;
+
+    &_item {
+        margin: auto;
+        cursor: pointer;
+        height: 4.8rem;
+        font-size: 1.4rem;
+        transition: $transition-ease;
+        font-weight: 500;
+
+
+        &:hover {
+            background-color: $color-white-gray;
+        }
+    }
+}

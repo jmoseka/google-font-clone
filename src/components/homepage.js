@@ -4,6 +4,7 @@ import "./toolbar/toolbar.scss";
 import "./toolbar/searchfont.scss";
 import "./toolbar/toolbar-font-group.scss";
 import "./toolbar/fontsentence.scss";
+import "./utility/dropdown.scss";
 import { useEffect, useState } from "react";
 import FontSize from "./toolbar/fontsize/fontsize";
 import fontsData from './data.js';
