@@ -11,13 +11,11 @@
 }
 
 .font-card {
-    overflow: hidden;
     border: 1px solid $border-color;
     text-align: left;
-    // padding: 1rem;
     min-height: 22rem;
     border-radius: .8rem;
-    padding: 1rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
     height: auto;
     word-break: break-all;
     color: $dark-gray;
@@ -33,17 +31,17 @@
         color: #7c7c7e;
         font-weight: 600;
         letter-spacing: .4px;
-        line-height: 0;
         line-height: 1rem;
     }
 
     &_text {
-        
+        margin-top: 6rem;
+        margin-bottom: 4rem;
     }
 }
 
 @media(max-width: 1238px) {
     .fontcard-container {
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
