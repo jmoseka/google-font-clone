@@ -13,9 +13,10 @@ const FontSize = ({onFontChange}) => {
   const handleScrollBarFont = (event) => {
     const font = event.target.value;
     setFontSize(font)
+    onFontChange(fontSize)
   }
   
-  onFontChange(fontSize)
+  //onFontChange(fontSize)
 
   return (
     <>
