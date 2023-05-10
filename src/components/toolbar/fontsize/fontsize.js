@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './fontsettingsize.scss'
-import { RiArrowDownSFill, RiArrowDropUpFill } from "react-icons/ri";
+import { RiArrowDownSFill } from "react-icons/ri";
 import { GrPowerReset } from "react-icons/gr";
 
 const FontSize = ({onFontChange}) => {

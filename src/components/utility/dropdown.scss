@@ -24,3 +24,14 @@
         }
     }
 }
+
+.arrow-down {
+    color: $secondary-color;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-up {
+    transform: rotate(180deg);
+}
