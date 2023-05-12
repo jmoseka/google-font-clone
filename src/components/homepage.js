@@ -18,6 +18,8 @@ function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
     const [sentence, setSentence] = useState(defaultSentence);
     const [fontPX, setFontPX] = useState(30);
+    const [isOpen, setIsOpen] = useState(false);
+    const menuItems = ["Custom", "Sentence", "Paragraph"];
 
     function handleSentence(event) {
         setSentence(event.target.value)
@@ -51,10 +53,28 @@ function Homepage() {
 
                         {/* font type sentence */}
                         <div className="toolbar-item-input font-sentence">
-                            <button className="toolbar-btn sentence">
+                            <button onClick={
+                                ()=> setIsOpen(!isOpen)
+                            } className="toolbar-btn btn-sentence">
                                 <span className="toolbar-lbl">Sentence</span>
                                 <span className="arrow-down"><RiArrowDownSFill /></span>
                             </button>
+
+                            {!isOpen && (
+                                <div className="dropdown-content dropdown-sentence">
+                                    {menuItems.map((item, index) => (
+                                        <p className="dropdown-content_item" onClick={
+                                            () => {
+                                                console.log(item);
+                                            }
+                                        } key={index} href="#">
+                                            <span>{item}</span>
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
+
+
                             <input className='setting-text toolbar-input' typeof="text" placeholder="Type something"
                                 onChange={handleSentence}
                             />
