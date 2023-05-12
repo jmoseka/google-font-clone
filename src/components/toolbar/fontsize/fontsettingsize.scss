@@ -1,5 +1,9 @@
 @import '/src/components/homepage.scss';
 
+.dropdown {
+    position: relative;
+    padding-left: .9rem;
+}
 
 .font-setting-size {
     border-left: 1px solid $border-color;
@@ -9,9 +13,9 @@
     //padding: 0 $toolbar-div-padding;
 }
 
-.dropdown {
-    padding-left: .7rem;
-}
+// .dropdown {
+//     padding-left: .7rem;
+// }
 
 .fontsize-slider {
     width: 80%;
