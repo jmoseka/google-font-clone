@@ -1,31 +1,101 @@
 import "./menuoption.scss";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useState } from "react";
 
 const MenuOption = () => {
 
     const menuCategory = ["Serif", "Sans Serif", "Display", "Handwriting", 'Monospace'];
     const menuLang = ['All languages', 'Arabic', 'Chinese (Hong Kong)', 'Gujarati', 'Korean', 'Telugu', 'Vietnamese'];
 
+    const [isDown, setIsDown] = useState(true);
+    const [isDownArrowLang, setIsDownArrowLang] = useState(false);
+    const [isCatOpen, setIsCatOpen] = useState(false);
+    const [isLangOpen, setIsLangOpen] = useState(true);
+    const [selectedLang, setSelectedLang] = useState('Language')
 
     return (
         <div className="menuoption">
             <div className="dropdown-menu-option">
-                <div className="dropdown-option dropdown-option-category">
-                    <span className="dropdown-lbl">Categories</span>
-                    <span className="arrow-down">
-                        <RiArrowDownSFill />
-                    </span>
+                <div className="menu-tab">
+
+                    <div className="dropdown-option-btn dropdown-option-category"
+                        onClick={() => {
+                            setIsDown(!isDown)
+                            setIsCatOpen(!isCatOpen)
+                        }}>
+                        <span className="dropdown-lbl">Categories</span>
+                        {
+                            isDown ? <span className="arrow-down"><RiArrowDownSFill /></span>
+                                : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+                        }
+                    </div>
+
+
+                    {isCatOpen && (
+                        <div className="dropdown-content dropdown-category">
+                            {menuCategory.map((item, index) => (
+                                <p className="" onClick={
+                                    () => {
+                                        setIsCatOpen(!isCatOpen)
+                                        setIsDown(!isDown)
+                                    }
+                                } key={index} href="#">
+                                    <span>{item}</span>
+                                </p>
+                            ))}
+                        </div>
+                    )}
+
                 </div>
 
-                <div className="dropdown-option dropdown-option-language">
-                    <span className="dropdown-lbl"> Arabic</span>
-                    <span className="arrow-down">
-                        <RiArrowDownSFill />
-                    </span>
+
+
+                <div className="menu-tab">
+
+                    <div className="dropdown-option-btn dropdown-option-language"
+                    onClick={() => {
+                        setIsDownArrowLang(!isDownArrowLang)
+                        setIsLangOpen(!isLangOpen)
+                    }}
+                    >
+                        <span className="dropdown-lbl"> {selectedLang} </span>
+                        {
+                            isDownArrowLang ? <span className="arrow-down"><RiArrowDownSFill /></span>
+                                : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+                        }
+                    </div>
+
+                    {isLangOpen && (
+                        <div className="dropdown-content dropdown-lang">
+                            {menuLang.map((item, index) => (
+                                <p className="dropdown-content_item" onClick={
+                                    () => {
+                                        setIsLangOpen(!isCatOpen)
+                                        setIsDownArrowLang(!isDownArrowLang)
+                                        if (item === 'All languages') {
+                                            item = 'Language'
+                                        }
+                                        setSelectedLang(item)
+                                    }
+                                } key={index} href="#">
+                                    <span>{item}</span>
+                                </p>
+                            ))}
+                        </div>
+                    )}
+
+
                 </div>
 
-                <div className="dropdown-option dropdown-option-styles">
+
+
+
+
+
+
+
+                <div className="dropdown-option-btn dropdown-option-styles">
                     <span className="dropdown-lbl">Number of styles</span>
                     <span className="arrow-down">
                         <RiArrowDownSFill />

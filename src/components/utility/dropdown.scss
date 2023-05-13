@@ -1,21 +1,19 @@
 @import "/src/components/homepage.scss";
 
+$dropdown-fontsize: 1.56rem;
+
 .dropdown-content {
     position: absolute;
-    //margin-top: .7rem;
-    // width: 8rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    //max-height: 17rem;
-    //overflow-y: scroll;
     border-radius: .9rem;
     background-color: $color-white;
     text-align: left;
+    font-size: $dropdown-fontsize;
+    padding: 1rem 0;
 
 
     &_item {
         cursor: pointer;
-        // height: 4.8rem;
-        // font-size: 1.4rem;
         transition: $transition-ease;
 
         &:hover {
@@ -28,6 +26,7 @@
         font-weight: 400;
         color: $color-font-dark;
         margin: 0;
+        margin-right: .4rem;
         padding: 1.4rem 0 1.4rem 1.2rem;
     }
 }
@@ -43,11 +42,8 @@
 }
 
 .dropdown-sentence {
-    padding: 1rem 0;
     top: 4.8rem;
-    width: 10.5rem;
-    font-size: 1.56rem;
-
+    width: 10.5rem; 
 }
 
 .dropdown-fontsize {
@@ -56,6 +52,18 @@
     max-height: 15rem;
     overflow: hidden;
     font-size: 1.5rem;
-    padding: 1rem 0;
     overflow-y: scroll;
 }
+
+.dropdown-category {
+    width: 15rem;
+    top: 5rem;
+}
+
+.dropdown-lang {
+    width: 20rem;
+    top: 5rem;
+    max-height: 18rem;
+    overflow-y: scroll;
+}
+
