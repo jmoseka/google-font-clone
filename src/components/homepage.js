@@ -20,6 +20,7 @@ function Homepage() {
     // const [sentence, setSentence] = useState(defaultSentence);
     const [fontPX, setFontPX] = useState(30);
     const [isOpen, setIsOpen] = useState(false);
+    const [isDown, setIsDown] = useState(true);
     const menuItems = ["Custom", "Sentence", "Paragraph"];
     const [preview, setPreview] = useState(defaultSentence);
     const [isCustom, setIsCustom] = useState(false);
@@ -35,11 +36,12 @@ function Homepage() {
 
     function handleFontChange(newData) {
         setFontPX(newData);
-   
+
     }
 
     const handlePreview = (item) => {
         setPrevCategory(item);
+        setIsDown(true);
         const text = item.toLowerCase();
 
         if (text === 'custom') {
@@ -61,7 +63,7 @@ function Homepage() {
 
     useEffect(() => {
 
-        if (preview === ''  && !isCustom) {
+        if (preview === '' && !isCustom) {
             setPreview(defaultSentence)
         }
 
@@ -86,21 +88,29 @@ function Homepage() {
                         {/* font type sentence */}
                         <div className="toolbar-item-input font-sentence">
                             <button onClick={
-                                () => setIsOpen(!isOpen)
+                                () => {
+                                    setIsOpen(!isOpen)
+                                    setIsDown(!isDown)
+                                }
                             } className="toolbar-btn btn-sentence">
                                 <span className="toolbar-lbl">{prevCategory}</span>
-                                <span className="arrow-down"><RiArrowDownSFill /></span>
+                                <span className="arrow-down">
+                                    {
+                                        isDown ? <span className="arrow-down"><RiArrowDownSFill /></span>
+                                            : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+                                    }
+                                </span>
                             </button>
 
                             {isOpen && (
                                 <div className="dropdown-content dropdown-sentence">
                                     {menuItems.map((item, index) => (
                                         <p className="dropdown-content_item"
-                                        onClick={
-                                            () => {
-                                                handlePreview(item)
+                                            onClick={
+                                                () => {
+                                                    handlePreview(item)
+                                                }
                                             }
-                                        }
                                             key={index} href="#">
                                             <span >{item}</span>
                                         </p>
