@@ -35,7 +35,9 @@ const MenuOption = () => {
                     {isCatOpen && (
                         <div className="dropdown-content dropdown-category">
                             {menuCategory.map((item, index) => (
-                                <p className="" onClick={
+                                <div>
+                                    <span></span>
+                                    <p className="" onClick={
                                     () => {
                                         setIsCatOpen(!isCatOpen)
                                         setIsDown(!isDown)
@@ -43,11 +45,19 @@ const MenuOption = () => {
                                 } key={index} href="#">
                                     <span>{item}</span>
                                 </p>
+                                </div>
                             ))}
                         </div>
                     )}
 
                 </div>
+
+
+
+
+
+
+
 
 
 
