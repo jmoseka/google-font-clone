@@ -21,37 +21,51 @@ function Homepage() {
     const [fontPX, setFontPX] = useState(30);
     const [isOpen, setIsOpen] = useState(false);
     const menuItems = ["Custom", "Sentence", "Paragraph"];
-    const [preview, setPreview] = useState('');
+    const [preview, setPreview] = useState(defaultSentence);
+    const [isCustom, setIsCustom] = useState(false);
+    const [prevCategory, setPrevCategory] = useState('Sentence');
 
     function handleSentence(event) {
         setPreview(event.target.value)
+
+        if (prevCategory === 'Custom') {
+            setIsCustom(false)
+        }
     }
 
     function handleFontChange(newData) {
         setFontPX(newData);
+   
     }
 
     const handlePreview = (item) => {
+        setPrevCategory(item);
         const text = item.toLowerCase();
 
         if (text === 'custom') {
+            setIsCustom(true);
             setPreview('');
         }
+
         else if (text === 'sentence') {
             setPreview(defaultSentence);
         }
 
         else if (text === 'paragraph') {
             setPreview(defaultParagraph);
+            setFontPX(18)
+            handleFontChange(fontPX)
         }
-
+        setIsOpen(!isOpen);
     }
 
     useEffect(() => {
-        if (preview === '') {
+
+        if (preview === ''  && !isCustom) {
             setPreview(defaultSentence)
         }
-    }, [preview])
+
+    }, [preview, isCustom])
 
 
     return (
@@ -74,7 +88,7 @@ function Homepage() {
                             <button onClick={
                                 () => setIsOpen(!isOpen)
                             } className="toolbar-btn btn-sentence">
-                                <span className="toolbar-lbl">Sentence</span>
+                                <span className="toolbar-lbl">{prevCategory}</span>
                                 <span className="arrow-down"><RiArrowDownSFill /></span>
                             </button>
 
