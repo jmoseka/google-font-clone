@@ -4,6 +4,10 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const MenuOption = () => {
 
+    const menuCategory = ["Serif", "Sans Serif", "Display", "Handwriting", 'Monospace'];
+    const menuLang = ['All languages', 'Arabic', 'Chinese (Hong Kong)', 'Gujarati', 'Korean', 'Telugu', 'Vietnamese'];
+
+
     return (
         <div className="menuoption">
             <div className="dropdown-menu-option">
