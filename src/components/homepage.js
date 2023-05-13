@@ -4,6 +4,7 @@ import "./toolbar/toolbar.scss";
 import "./toolbar/searchfont.scss";
 import "./toolbar/toolbar-font-group.scss";
 import "./toolbar/fontsentence.scss";
+import "./utility/dropdown.scss";
 import { useEffect, useState } from "react";
 import FontSize from "./toolbar/fontsize/fontsize";
 import fontsData from './data.js';
@@ -15,22 +16,58 @@ import MenuOption from "./menuoption/menuoption";
 
 function Homepage() {
     const defaultSentence = 'Whereas recognition of the inherit dignity';
-    const [sentence, setSentence] = useState(defaultSentence);
+    const defaultParagraph = 'No one shall be subjected to arbitrary arrest, detention or exile. Everyone is entitled in full equality to a fair and public hearing by an independent and impartial tribunal, in the determination of his rights and obligations and of any criminal charge against him. No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.';
+    // const [sentence, setSentence] = useState(defaultSentence);
     const [fontPX, setFontPX] = useState(30);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isDown, setIsDown] = useState(true);
+    const menuItems = ["Custom", "Sentence", "Paragraph"];
+    const [preview, setPreview] = useState(defaultSentence);
+    const [isCustom, setIsCustom] = useState(false);
+    const [prevCategory, setPrevCategory] = useState('Sentence');
 
     function handleSentence(event) {
-        setSentence(event.target.value)
+        setPreview(event.target.value)
+
+        if (prevCategory === 'Custom') {
+            setIsCustom(false)
+        }
     }
 
     function handleFontChange(newData) {
         setFontPX(newData);
+
+    }
+
+    const handlePreview = (item) => {
+        setPrevCategory(item);
+        setIsDown(true);
+        const text = item.toLowerCase();
+
+        if (text === 'custom') {
+            setIsCustom(true);
+            setPreview('');
+        }
+
+        else if (text === 'sentence') {
+            setPreview(defaultSentence);
+        }
+
+        else if (text === 'paragraph') {
+            setPreview(defaultParagraph);
+            setFontPX(18)
+            handleFontChange(fontPX)
+        }
+        setIsOpen(!isOpen);
     }
 
     useEffect(() => {
-        if (sentence === '') {
-            setSentence(defaultSentence)
+
+        if (preview === '' && !isCustom) {
+            setPreview(defaultSentence)
         }
-    }, [sentence])
+
+    }, [preview, isCustom])
 
 
     return (
@@ -50,10 +87,38 @@ function Homepage() {
 
                         {/* font type sentence */}
                         <div className="toolbar-item-input font-sentence">
-                            <button className="toolbar-btn sentence">
-                                <span className="toolbar-lbl">Sentence</span>
-                                <span className="arrow-down"><RiArrowDownSFill /></span>
+                            <button onClick={
+                                () => {
+                                    setIsOpen(!isOpen)
+                                    setIsDown(!isDown)
+                                }
+                            } className="toolbar-btn btn-sentence">
+                                <span className="toolbar-lbl">{prevCategory}</span>
+                                <span className="arrow-down">
+                                    {
+                                        isDown ? <span className="arrow-down"><RiArrowDownSFill /></span>
+                                            : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+                                    }
+                                </span>
                             </button>
+
+                            {isOpen && (
+                                <div className="dropdown-content dropdown-sentence">
+                                    {menuItems.map((item, index) => (
+                                        <p className="dropdown-content_item"
+                                            onClick={
+                                                () => {
+                                                    handlePreview(item)
+                                                }
+                                            }
+                                            key={index} href="#">
+                                            <span >{item}</span>
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
+
+
                             <input className='setting-text toolbar-input' typeof="text" placeholder="Type something"
                                 onChange={handleSentence}
                             />
@@ -73,7 +138,7 @@ function Homepage() {
                 <div className="fontcard-container">
                     {
                         fontsData.map((data) => {
-                            return <FontCard key={data.id} fontText={sentence} fontSize={fontPX} fontsdata={data} />
+                            return <FontCard key={data.id} fontText={preview} fontSize={fontPX} fontsdata={data} />
                         })
                     }
 

@@ -5,8 +5,9 @@ import { GrPowerReset } from "react-icons/gr";
 
 const FontSize = ({onFontChange}) => {
   const defaultFontsize = 40;
+  const [isDown, setIsDown] = useState(true);
 
-  const [fontSize, setFontSize] = useState(defaultFontsize)
+  const [fontSize, setFontSize] = useState(defaultFontsize);
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = [8, 12, 14, 20, 24, 32, 40, 64, 96, 120, 184, 280];
 
@@ -15,20 +16,37 @@ const FontSize = ({onFontChange}) => {
     setFontSize(font)
     onFontChange(fontSize)
   }
-  
+
   //onFontChange(fontSize)
 
   return (
     <>
       <div className="dropdown">
-        <button className="toolbar-btn" onClick={() => setIsOpen(!isOpen)}>
+        <button className="toolbar-btn" onClick={() =>  
+          {setIsOpen(!isOpen)
+          setIsDown(!isDown)
+          }
+          }>
           <span className="toolbar-lbl">{`${fontSize}px`}</span>
-          <span className="arrow-down"><RiArrowDownSFill /></span>
+          {
+            isDown ? <span className="arrow-down"><RiArrowDownSFill /></span> 
+            : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+          }
+          
         </button>
         {isOpen && (
-          <div className="dropdown-content">
+          <div className="dropdown-content dropdown-fontsize">
             {menuItems.map((item, index) => (
-              <p key={index} href="#">{item}</p>
+              <p className="dropdown-content_item" onClick={
+                ()=>{
+                  setFontSize(item)
+                  onFontChange(item)
+                  setIsOpen(!isOpen)
+                  setIsDown(!isDown)
+                }
+              } key={index} href="#">
+                <span>{item}</span>
+              </p>
             ))}
           </div>
         )}
