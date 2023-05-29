@@ -9,10 +9,20 @@ const MenuOption = () => {
     const menuLang = ['All languages', 'Arabic', 'Chinese (Hong Kong)', 'Gujarati', 'Korean', 'Telugu', 'Vietnamese'];
 
     const [isDown, setIsDown] = useState(true);
-    const [isDownArrowLang, setIsDownArrowLang] = useState(false);
+    const [isDownArrowLang, setIsDownArrowLang] = useState(true);
+    const [isDownArrowStyle, setIsDownArrowStyle] = useState(true);
+
     const [isCatOpen, setIsCatOpen] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(true);
+    const [isStyleOpen, setIsStyleOpen] = useState(false);
+
     const [selectedLang, setSelectedLang] = useState('Language')
+
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
+    };
 
     return (
         <div className="menuoption">
@@ -38,13 +48,13 @@ const MenuOption = () => {
                                 <div>
                                     <span></span>
                                     <p className="" onClick={
-                                    () => {
-                                        setIsCatOpen(!isCatOpen)
-                                        setIsDown(!isDown)
-                                    }
-                                } key={index} href="#">
-                                    <span>{item}</span>
-                                </p>
+                                        () => {
+                                            setIsCatOpen(!isCatOpen)
+                                            setIsDown(!isDown)
+                                        }
+                                    } key={index} href="#">
+                                        <span>{item}</span>
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -64,10 +74,10 @@ const MenuOption = () => {
                 <div className="menu-tab">
 
                     <div className="dropdown-option-btn dropdown-option-language"
-                    onClick={() => {
-                        setIsDownArrowLang(!isDownArrowLang)
-                        setIsLangOpen(!isLangOpen)
-                    }}
+                        onClick={() => {
+                            setIsDownArrowLang(!isDownArrowLang)
+                            setIsLangOpen(!isLangOpen)
+                        }}
                     >
                         <span className="dropdown-lbl"> {selectedLang} </span>
                         {
@@ -76,7 +86,7 @@ const MenuOption = () => {
                         }
                     </div>
 
-                    {isLangOpen && (
+                    {!isLangOpen && (
                         <div className="dropdown-content dropdown-lang">
                             {menuLang.map((item, index) => (
                                 <p className="dropdown-content_item" onClick={
@@ -105,13 +115,47 @@ const MenuOption = () => {
 
 
 
-                <div className="dropdown-option-btn dropdown-option-styles">
-                    <span className="dropdown-lbl">Number of styles</span>
-                    <span className="arrow-down">
-                        <RiArrowDownSFill />
-                    </span>
+                <div className="menu-tab">
+                    <div className="dropdown-option-btn dropdown-option-styles"
+                        onClick={() => {
+                            setIsDownArrowStyle(!isDownArrowStyle)
+                            setIsStyleOpen(!isStyleOpen)
+                        }}
+                    >
+                        <span className="dropdown-lbl">Number of styles</span>
+                        {
+                            isDownArrowStyle ? <span className="arrow-down"><RiArrowDownSFill /></span>
+                                : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
+                        }
+                    </div>
+
+                    {
+                        !isStyleOpen && (
+                            <div className="dropdown-content dropdown-style">
+                                <p>Number of styles</p>
+                                <div className="style-setting">
+                                    <div className="style-setting-checkbox">
+                                        <input
+                                            type="checkbox"
+                                            checked={isChecked}
+                                            onChange={handleCheckboxChange}
+                                        />
+                                    </div>
+
+                                    <div className="style-setting-slider">
+                                    <input type="range" min="8" max="280" value={10} onChange={handleScrollStyle} />
+                                    </div>
+
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
+
             </div>
+
+
+
 
             <div className="checkbox-menu-option">
                 <div className="checkbox-option checkbox-option-variable">

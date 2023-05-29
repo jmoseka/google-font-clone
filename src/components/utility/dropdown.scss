@@ -10,6 +10,7 @@ $dropdown-fontsize: 1.56rem;
     text-align: left;
     font-size: $dropdown-fontsize;
     padding: 1rem 0;
+    transition: $transition-ease;
 
 
     &_item {
@@ -65,5 +66,10 @@ $dropdown-fontsize: 1.56rem;
     top: 5rem;
     max-height: 18rem;
     overflow-y: scroll;
+}
+
+.dropdown-style {
+    width: 20rem;
+    top: 5rem;
 }
 
