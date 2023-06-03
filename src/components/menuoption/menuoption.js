@@ -19,10 +19,18 @@ const MenuOption = () => {
     const [selectedLang, setSelectedLang] = useState('Language')
 
     const [isChecked, setIsChecked] = useState(false);
+    const [styleNo, setIsStyleNo] = useState(8);
 
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
     };
+
+    const handleScrollStyle = (event) => {
+        setIsStyleNo(event.target.value)
+        // const font = event.target.value;
+        // setFontSize(font)
+        // onFontChange(fontSize)
+    }
 
     return (
         <div className="menuoption">
@@ -61,9 +69,6 @@ const MenuOption = () => {
                     )}
 
                 </div>
-
-
-
 
 
 
@@ -132,21 +137,38 @@ const MenuOption = () => {
                     {
                         !isStyleOpen && (
                             <div className="dropdown-content dropdown-style">
-                                <p>Number of styles</p>
-                                <div className="style-setting">
-                                    <div className="style-setting-checkbox">
-                                        <input
-                                            type="checkbox"
-                                            checked={isChecked}
-                                            onChange={handleCheckboxChange}
-                                        />
+
+                                <div className="number-of-style-box">
+                                    <p>Number of styles</p>
+
+                                    <div className="style-setting">
+                                        <div className="style-setting-checkbox">
+                                            <div className="checkbox-circle">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isChecked}
+                                                    onChange={handleCheckboxChange}
+                                                />
+                                            </div>
+
+
+                                            <div className="style-setting-slider slider center-item">
+                                                <input type="range" min="0" max="18" value={styleNo} onChange={handleScrollStyle} />
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <span>All</span>
                                     </div>
 
-                                    <div className="style-setting-slider">
-                                    <input type="range" min="8" max="280" value={10} onChange={handleScrollStyle} />
-                                    </div>
+                                    <button className="style-reset-btn" type="button">Reset</button>
 
+                                    
                                 </div>
+                                
+                                
                             </div>
                         )
                     }

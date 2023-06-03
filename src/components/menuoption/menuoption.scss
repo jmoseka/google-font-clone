@@ -17,7 +17,6 @@ $option-menu-gap: .5rem;
     align-items: center;
     gap: 1.2rem;
     font-weight: 500;
-    cursor: pointer;
 }
 
 .menu-tab {
@@ -64,4 +63,69 @@ $option-menu-gap: .5rem;
     color: $color-font-dark;
     font-size: 2rem;
     font-weight: 600;
+}
+
+.number-of-style-box {
+        font-size: 1.4rem;
+        padding: 1rem 1rem 1.4rem 1.4rem;
+
+        p{
+            padding: 0;
+        }
+}
+
+.style-setting {
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 1.2rem;
+    
+}
+
+.style-setting-checkbox {
+    display: flex;
+    cursor: pointer;
+    gap: 0rem;
+    
+}
+
+.checkbox-circle {
+    background-color:rgba($secondary-color, 25%);
+    padding: .8rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+    }
+
+}
+
+.style-setting-slider {
+    input {
+        width: 10rem;
+    }
+    
+}
+
+.style-reset-btn {
+   width: fit-content;
+   font-family: 'Roboto', 'sans-serif';
+   color: $secondary-color;
+   font-weight: 500;
+   float: right;
+   margin-top: 2rem;
+   padding: .8rem 1.5rem;
+   font-size: 1.45rem;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+   border-radius: .7rem;
+
+}
+
+.style-reset-btn:hover {
+    background-color:rgba($secondary-color, 6%);
+    color: $secondary-color-dark;
 }

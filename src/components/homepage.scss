@@ -16,8 +16,8 @@ $primary-font: 'Roboto', sans-serif;
 
 $color-red:#c84139;
 
-$secondary-color: #1a73e8;
-$secondary-color-dark: rgb(58, 28, 201);
+$secondary-color: rgb(26, 115, 232);
+$secondary-color-dark: rgb(18, 66, 179);
 $secondary-color-hover-light: #e3eefc;
 
 $main-margin-ends: 6.7rem;
@@ -28,6 +28,8 @@ $margin-medium-height: 8rem;
 $transition-ease: all 0.3s ease;
 
 $toolbar-div-padding: 1.8rem;
+
+$btn-radius: .7rem;
 
 /*helper class*/
 .center-item {
@@ -66,4 +68,22 @@ $toolbar-div-padding: 1.8rem;
 
 p {
     color: $color-font
+}
+
+
+.slider {
+
+    input {
+        height: .5rem;
+        padding: 0;
+        margin: 0;
+        background-color: $secondary-color;
+        cursor: pointer;
+    }
+
+    
+
+    // input::-webkit-slider-runnable-track {
+    //     background-color: black; /* Set the desired inner part color */
+    // }
 }
