@@ -198,5 +198,9 @@ input[type="range"]::-moz-range-progress {
         pointer-events: none;
       }
 
+      .style-no-update {
+        display: none;
+      }
+
     
 }

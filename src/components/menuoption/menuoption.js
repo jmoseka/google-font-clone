@@ -184,7 +184,7 @@ const MenuOption = () => {
 
 
 
-                                        <span>All</span>
+                                        <span className="style-no-update">All</span>
                                     </div>
 
                                     <button className="style-reset-btn" type="button">Reset</button>
