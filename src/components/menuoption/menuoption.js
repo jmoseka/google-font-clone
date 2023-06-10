@@ -25,12 +25,40 @@ const MenuOption = () => {
         setIsChecked(event.target.checked);
     };
 
+    const trackStyle = {
+        // '--progress': `${(styleNo / 18) * 100}%`,
+        background: `linear-gradient(to right, #c84139 ${(styleNo / 18) * 100}%, #000 ${(styleNo / 18) * 100}%)`,
+    };
+
     const handleScrollStyle = (event) => {
-        setIsStyleNo(event.target.value)
+        const number = event.target.value;
+        setIsStyleNo(number);
+
         // const font = event.target.value;
         // setFontSize(font)
         // onFontChange(fontSize)
     }
+
+    const handleCheckBox = () => {
+        setIsChecked(!isChecked)
+    }
+
+    const getTrackProgress = () => {
+        const progress = (styleNo / 18) * 100; // Convert value to a percentage
+        // return {
+        //     background: `linear-gradient(to right, #c84139 ${progress}%, #ddd ${progress}%)`,
+        // };
+        return {
+            width: `${progress}%`,
+        }
+    };
+
+    const getThumbStyle = () => {
+        const progress = (styleNo / 18) * 100;
+        return {
+            left: `calc(${progress}% - 8px)`,
+        };
+    };
 
     return (
         <div className="menuoption">
@@ -71,11 +99,6 @@ const MenuOption = () => {
                 </div>
 
 
-
-
-
-
-
                 <div className="menu-tab">
 
                     <div className="dropdown-option-btn dropdown-option-language"
@@ -114,12 +137,6 @@ const MenuOption = () => {
                 </div>
 
 
-
-
-
-
-
-
                 <div className="menu-tab">
                     <div className="dropdown-option-btn dropdown-option-styles"
                         onClick={() => {
@@ -141,9 +158,9 @@ const MenuOption = () => {
                                 <div className="number-of-style-box">
                                     <p>Number of styles</p>
 
-                                    <div className="style-setting">
-                                        <div className="style-setting-checkbox">
-                                            <div className="checkbox-circle">
+                                    <div className="style-setting style-reset">
+                                        <div className="checkbox-slider-group">
+                                            <div className="checkbox-circle center-item" onClick={handleCheckBox}>
                                                 <input
                                                     type="checkbox"
                                                     checked={isChecked}
@@ -152,10 +169,11 @@ const MenuOption = () => {
                                             </div>
 
 
-                                            <div className="style-setting-slider slider center-item">
-                                                <input type="range" min="0" max="18" value={styleNo} onChange={handleScrollStyle} />
-                                            </div>
+                                            <div className=" slider slider-style center-item">
+                                                <input type="range" min="0" max="18" value={styleNo} onChange={handleScrollStyle}
+                                                />
 
+                                            </div>
                                         </div>
 
 
@@ -165,10 +183,10 @@ const MenuOption = () => {
 
                                     <button className="style-reset-btn" type="button">Reset</button>
 
-                                    
+
                                 </div>
-                                
-                                
+
+
                             </div>
                         )
                     }

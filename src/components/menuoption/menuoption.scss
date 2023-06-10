@@ -79,35 +79,95 @@ $option-menu-gap: .5rem;
     justify-content: space-between;
     display: flex;
     align-items: center;
-    margin-top: 1.2rem;
+    margin-top: 1.4rem;
+
     
 }
 
-.style-setting-checkbox {
+
+
+.checkbox-slider-group {
     display: flex;
     cursor: pointer;
-    gap: 0rem;
+    gap: 1rem;
+    align-items: center;
+
     
 }
 
 .checkbox-circle {
-    background-color:rgba($secondary-color, 25%);
-    padding: .8rem;
     border-radius: 50%;
     cursor: pointer;
 
     input {
+        appearance: none;
+        -webkit-appearance: none;
+        display: inline-block;
+        position: relative;
         cursor: pointer;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: .2rem;
+        border: 2px solid $color-black;
+        // outline: 2px solid $color-black;
+        // border: 10px solid black;
+        // border-radius: 90px;
     }
+
+    input[type="checkbox"]:checked::after {
+        content: "\2713"; /* Unicode character for a checkmark */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        color: $color-white;
+      }
+
+      input[type="checkbox"]:checked::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: $secondary-color-dark;
+      }
+
+    input[type="checkbox"]:focus {
+        border-radius: 50%;
+        
+        outline: 1rem solid rgba($secondary-color, 28%);
+      }
+
+      input[type="checkbox"]:not(:checked) {
+        border-radius: .2rem;
+        outline: none;
+      }
 
 }
 
-.style-setting-slider {
+
+
+.slider-style {
     input {
         width: 10rem;
     }
-    
+    input::after {
+        content: "";
+        background-color: yellow;
+    }
 }
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
 
 .style-reset-btn {
    width: fit-content;
