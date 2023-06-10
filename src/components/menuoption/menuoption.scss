@@ -67,7 +67,7 @@ $option-menu-gap: .5rem;
 
 .number-of-style-box {
         font-size: 1.4rem;
-        padding: 1rem 1.4rem 1.4rem 1.8rem;
+        padding: 1rem 1.4rem 1.4rem 1.7rem;
 
         p{
             padding: 0;
@@ -89,7 +89,7 @@ $option-menu-gap: .5rem;
 .checkbox-slider-group {
     display: flex;
     cursor: pointer;
-    gap: 1rem;
+    gap: .55rem;
     align-items: center;
 
     
@@ -152,10 +152,10 @@ $option-menu-gap: .5rem;
     input {
         width: 10rem;
     }
-    input::after {
-        content: "";
-        background-color: yellow;
-    }
+}
+
+.style-no-update {
+    letter-spacing: -0.7px;
 }
 
 

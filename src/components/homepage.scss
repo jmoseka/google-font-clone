@@ -162,11 +162,17 @@ input[type="range"]::-moz-range-progress {
 
     .checkbox-circle {
             background-color: $light-gray;
+
+            input[type="checkbox"]:not(:focus) {
+                border-color: $dark-gray;
+            }
+            
     }
 
       .slider-style {
         input {
             pointer-events: none;
+            
         }
         input[type="range"]::-webkit-slider-runnable-track {
             background: $light-gray-2;

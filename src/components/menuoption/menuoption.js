@@ -29,6 +29,10 @@ const MenuOption = () => {
             setIsStyleNo(defaultStyle)
         }
 
+        else {
+            setIsStyleNo(0)
+        }
+
     }, [isChecked])
 
 
@@ -184,7 +188,13 @@ const MenuOption = () => {
 
 
 
-                                        <span className="style-no-update">All</span>
+                                        <span className="style-no-update">
+                                            {
+                                                styleNo > 1? `${styleNo}+`
+                                                :
+                                                'All'
+                                            }
+                                            </span>
                                     </div>
 
                                     <button className="style-reset-btn" type="button">Reset</button>
