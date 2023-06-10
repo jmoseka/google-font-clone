@@ -6,7 +6,10 @@ $color-black: #000;
 $color-white: #ffffff;
 $color-white-gray: #f1f1f1;
 $dark-gray: #606469;
-$light-gray: #e4e4e4;
+$light-gray: #e4e4e4; // the lightest gray
+$light-gray-1: #d6d6d6;
+$light-gray-2: #b5b6b7;
+
 
 $color-font-dark: rgb(66, 65, 65);
 $color-font: #2c2c2c;
@@ -148,11 +151,52 @@ input[type="range"]:focus {
     background-color: $secondary-color-dark;
 }
 
+input[type="range"]::-moz-range-progress {
+    background-color: $secondary-color-dark;
+}
+
 
 }
 
 .style-reset {
+
     .checkbox-circle {
-        // background-color:rgba($secondary-color, 25%);
+            background-color: $light-gray;
     }
+
+      .slider-style {
+        input {
+            pointer-events: none;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: $light-gray-2;
+            height: 0.4rem;
+            border-radius: .8rem;
+          }
+    
+          input[type="range"]::-moz-range-track {
+            background: $light-gray;
+          }
+
+          input[type="range"]::-webkit-slider-thumb {
+            background-color: $light-gray-2;  
+         }
+
+         input[type="range"]::-moz-range-thumb {
+            background-color: $light-gray-2;
+         }
+        
+        
+         /***** Firefox *****/
+        input[type="range"]::-moz-range-progress {
+            background-color: $light-gray-2;
+        }  
+      }
+
+      .style-reset-btn {
+        color: rgba($light-gray-2, 65%);
+        pointer-events: none;
+      }
+
+    
 }

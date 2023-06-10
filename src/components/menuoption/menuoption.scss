@@ -97,6 +97,7 @@ $option-menu-gap: .5rem;
 
 .checkbox-circle {
     border-radius: 50%;
+    padding: .85rem;
     cursor: pointer;
 
     input {
@@ -105,8 +106,8 @@ $option-menu-gap: .5rem;
         display: inline-block;
         position: relative;
         cursor: pointer;
-        width: 1.6rem;
-        height: 1.6rem;
+        width: 1.8rem;
+        height: 1.8rem;
         border-radius: .2rem;
         border: 2px solid $color-black;
         // outline: 2px solid $color-black;
@@ -128,15 +129,14 @@ $option-menu-gap: .5rem;
         position: absolute;
         top: -2px;
         left: -2px;
-        width: 1.6rem;
-        height: 1.6rem;
+        width: 1.8rem;
+        height: 1.8rem;
         background-color: $secondary-color-dark;
       }
 
     input[type="checkbox"]:focus {
         border-radius: 50%;
-        
-        outline: 1rem solid rgba($secondary-color, 28%);
+        outline: 1.2rem solid rgba($secondary-color, 28%);
       }
 
       input[type="checkbox"]:not(:checked) {

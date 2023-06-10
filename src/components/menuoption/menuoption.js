@@ -2,12 +2,14 @@ import "./menuoption.scss";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const MenuOption = () => {
+    const defaultStyle = 8;
 
     const menuCategory = ["Serif", "Sans Serif", "Display", "Handwriting", 'Monospace'];
     const menuLang = ['All languages', 'Arabic', 'Chinese (Hong Kong)', 'Gujarati', 'Korean', 'Telugu', 'Vietnamese'];
-
+    const styleReset = 'style-reset';
     const [isDown, setIsDown] = useState(true);
     const [isDownArrowLang, setIsDownArrowLang] = useState(true);
     const [isDownArrowStyle, setIsDownArrowStyle] = useState(true);
@@ -19,16 +21,25 @@ const MenuOption = () => {
     const [selectedLang, setSelectedLang] = useState('Language')
 
     const [isChecked, setIsChecked] = useState(false);
-    const [styleNo, setIsStyleNo] = useState(8);
+    const [styleNo, setIsStyleNo] = useState(defaultStyle);
+
+    useEffect(() => {
+        // If ischecked == false
+        if (!isChecked) {
+            setIsStyleNo(defaultStyle)
+        }
+
+    }, [isChecked])
+
 
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
     };
 
-    const trackStyle = {
-        // '--progress': `${(styleNo / 18) * 100}%`,
-        background: `linear-gradient(to right, #c84139 ${(styleNo / 18) * 100}%, #000 ${(styleNo / 18) * 100}%)`,
-    };
+    // const trackStyle = {
+    //     // '--progress': `${(styleNo / 18) * 100}%`,
+    //     background: `linear-gradient(to right, #c84139 ${(styleNo / 18) * 100}%, #000 ${(styleNo / 18) * 100}%)`,
+    // };
 
     const handleScrollStyle = (event) => {
         const number = event.target.value;
@@ -43,22 +54,13 @@ const MenuOption = () => {
         setIsChecked(!isChecked)
     }
 
-    const getTrackProgress = () => {
-        const progress = (styleNo / 18) * 100; // Convert value to a percentage
-        // return {
-        //     background: `linear-gradient(to right, #c84139 ${progress}%, #ddd ${progress}%)`,
-        // };
-        return {
-            width: `${progress}%`,
-        }
-    };
 
-    const getThumbStyle = () => {
-        const progress = (styleNo / 18) * 100;
-        return {
-            left: `calc(${progress}% - 8px)`,
-        };
-    };
+
+    const handleStyleReset= () => {
+        // setDefaultReset(true);
+       return styleReset;
+    }
+
 
     return (
         <div className="menuoption">
@@ -153,17 +155,21 @@ const MenuOption = () => {
 
                     {
                         !isStyleOpen && (
-                            <div className="dropdown-content dropdown-style">
+                            <div className={`dropdown-content dropdown-style 
+                            ${isChecked ? '' : handleStyleReset() }`}>
 
+          
+                        
                                 <div className="number-of-style-box">
                                     <p>Number of styles</p>
 
-                                    <div className="style-setting style-reset">
+                                    <div className="style-setting ">
                                         <div className="checkbox-slider-group">
-                                            <div className="checkbox-circle center-item" onClick={handleCheckBox}>
+                                            <div className="checkbox-circle center-item" >
                                                 <input
                                                     type="checkbox"
                                                     checked={isChecked}
+                                                    onClick={handleCheckBox}
                                                     onChange={handleCheckboxChange}
                                                 />
                                             </div>
