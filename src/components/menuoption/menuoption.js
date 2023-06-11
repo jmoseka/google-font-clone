@@ -21,7 +21,7 @@ const MenuOption = () => {
     const [selectedLang, setSelectedLang] = useState('Language')
 
     const [isChecked, setIsChecked] = useState(false);
-    const [styleNo, setIsStyleNo] = useState(defaultStyle);
+    const [styleNo, setIsStyleNo] = useState(0);
 
     useEffect(() => {
         // If ischecked == false
@@ -60,9 +60,9 @@ const MenuOption = () => {
 
 
 
-    const handleStyleReset= () => {
+    const handleStyleReset = () => {
         // setDefaultReset(true);
-       return styleReset;
+        return styleReset;
     }
 
 
@@ -150,7 +150,15 @@ const MenuOption = () => {
                             setIsStyleOpen(!isStyleOpen)
                         }}
                     >
-                        <span className="dropdown-lbl">Number of styles</span>
+                        <span className="dropdown-lbl">
+                            Number of styles {!isChecked ? null :
+                                (
+                                    <span className="style-no-update">
+                                        ({styleNo < 1 ? '1' : styleNo}
+                                        <span className="plus">+</span>)
+                                    </span>
+                                )}
+                        </span>
                         {
                             isDownArrowStyle ? <span className="arrow-down"><RiArrowDownSFill /></span>
                                 : <span className="arrow-down arrow-up"><RiArrowDownSFill /></span>
@@ -158,24 +166,27 @@ const MenuOption = () => {
                     </div>
 
                     {
-                        !isStyleOpen && (
+                        isStyleOpen && (
                             <div className={`dropdown-content dropdown-style 
-                            ${isChecked ? '' : handleStyleReset() }`}>
+                            ${isChecked ? '' : handleStyleReset()}`}>
 
-          
-                        
+
+
                                 <div className="number-of-style-box">
                                     <p>Number of styles</p>
 
                                     <div className="style-setting ">
                                         <div className="checkbox-slider-group">
                                             <div className="checkbox-circle center-item" >
+                                                <div className="checkbox">
                                                 <input
+                                                    
                                                     type="checkbox"
                                                     checked={isChecked}
                                                     onClick={handleCheckBox}
                                                     onChange={handleCheckboxChange}
                                                 />
+                                                    </div>
                                             </div>
 
 
@@ -190,14 +201,17 @@ const MenuOption = () => {
 
                                         <span className="style-no-update">
                                             {
-                                                styleNo > 1? `${styleNo}+`
-                                                :
-                                                'All'
+                                                styleNo > 0 ? <span>{styleNo}
+                                                    <span className="plus">+</span> </span>
+                                                    :
+                                                    'All'
                                             }
-                                            </span>
+                                        </span>
                                     </div>
 
-                                    <button className="style-reset-btn" type="button">Reset</button>
+                                    <button className="style-reset-btn" type="button"
+                                    onClick={() => setIsChecked(!isChecked)}
+                                    >Reset</button>
 
 
                                 </div>

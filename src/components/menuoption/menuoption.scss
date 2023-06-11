@@ -1,6 +1,7 @@
 @import "/src/components/homepage.scss";
 
-$option-menu-gap: .5rem;
+$option-menu-gap: .25rem;
+$checkbox-border: 1.7rem;
 
 .menuoption {
     margin-top: $margin-small-middle-height;
@@ -28,11 +29,12 @@ $option-menu-gap: .5rem;
     background-color: $color-white;
     border: 1px solid $light-gray;
     border-radius: 2rem;
-    padding: .8rem 1.5rem;
+    padding: .7rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: $option-menu-gap;
+    cursor: pointer;
 
     &:hover {
         background-color: $secondary-color-hover-light;
@@ -41,7 +43,8 @@ $option-menu-gap: .5rem;
 }
 
 .dropdown-lbl {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    
 }
 
 .checkbox-menu-option {
@@ -79,7 +82,7 @@ $option-menu-gap: .5rem;
     justify-content: space-between;
     display: flex;
     align-items: center;
-    margin-top: 1.7rem;
+    margin-top: 1.5rem;
 
     
 }
@@ -97,52 +100,56 @@ $option-menu-gap: .5rem;
 
 .checkbox-circle {
     border-radius: 50%;
-    padding: .85rem;
+    padding: .82rem;
     cursor: pointer;
 
-    input {
-        appearance: none;
-        -webkit-appearance: none;
-        display: inline-block;
-        position: relative;
-        cursor: pointer;
-        width: 1.8rem;
-        height: 1.8rem;
-        border-radius: .2rem;
-        border: 2px solid $color-black;
-        // outline: 2px solid $color-black;
-        // border: 10px solid black;
-        // border-radius: 90px;
+    .checkbox {
+
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            width: $checkbox-border;
+            height: $checkbox-border;
+            border-radius: .2rem;
+            border: 2px solid $color-black;
+            // outline: 2px solid $color-black;
+            // border: 10px solid black;
+            // border-radius: 90px;
+        }
+    
+        input[type="checkbox"]:checked::after {
+            content: "\2713"; /* Unicode character for a checkmark */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            color: $color-white;
+          }
+    
+          input[type="checkbox"]:checked::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: $checkbox-border;
+            height: $checkbox-border;
+            background-color: $secondary-color-dark;
+          }
+    
+        input[type="checkbox"]:focus {
+            border-radius: 50%;
+            outline: 1.2rem solid rgba($secondary-color, 28%);
+          }
+    
+          input[type="checkbox"]:not(:checked) {
+            border-radius: .2rem;
+            outline: none;
+          }
+
     }
-
-    input[type="checkbox"]:checked::after {
-        content: "\2713"; /* Unicode character for a checkmark */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -55%);
-        color: $color-white;
-      }
-
-      input[type="checkbox"]:checked::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        width: 1.8rem;
-        height: 1.8rem;
-        background-color: $secondary-color-dark;
-      }
-
-    input[type="checkbox"]:focus {
-        border-radius: 50%;
-        outline: 1.2rem solid rgba($secondary-color, 28%);
-      }
-
-      input[type="checkbox"]:not(:checked) {
-        border-radius: .2rem;
-        outline: none;
-      }
 
 }
 
@@ -154,9 +161,7 @@ $option-menu-gap: .5rem;
     }
 }
 
-.style-no-update {
-    letter-spacing: -0.7px;
-}
+
 
 
   
@@ -175,7 +180,7 @@ $option-menu-gap: .5rem;
    color: $secondary-color;
    font-weight: 500;
    float: right;
-   margin-top: 2.5rem;
+   margin-top: 1.2rem;
    padding: .8rem 1.5rem;
    font-size: 1.45rem;
    border: none;
