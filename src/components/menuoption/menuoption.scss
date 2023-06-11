@@ -37,9 +37,19 @@ $checkbox-border: 1.7rem;
     cursor: pointer;
 
     &:hover {
-        background-color: $secondary-color-hover-light;
+        background-color: rgba($secondary-color-hover-light, 70%);
         color: $secondary-color;
     }
+}
+
+.dropdown-option-btn:active {
+    background-color: red;
+}
+
+.dropdown-option-active {
+    border: 1px solid $secondary-color-dark;
+    background-color: $secondary-color-hover-light;
+    color: $secondary-color;
 }
 
 .dropdown-lbl {

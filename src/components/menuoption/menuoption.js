@@ -23,6 +23,9 @@ const MenuOption = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [styleNo, setIsStyleNo] = useState(0);
 
+    const [activeMenuTab, setActiveMenuTab] = useState(0);
+
+
     useEffect(() => {
         // If ischecked == false
         if (!isChecked) {
@@ -33,7 +36,24 @@ const MenuOption = () => {
             setIsStyleNo(0)
         }
 
-    }, [isChecked])
+        console.log(activeMenuTab, 'useeffect');
+        if(activeMenuTab > 0) {
+            const menuTab = document.querySelectorAll('.menu-tab');
+            menuTab.forEach((item) => {
+                const child = item.children;
+                console.log(child)
+
+                // if(child[0].hasAttribute('dropdown-option-category')){
+                //     console.log(child);
+                // }
+            })
+           
+
+        }
+
+    }, [isChecked,activeMenuTab])
+
+    
 
 
     const handleCheckboxChange = (event) => {
@@ -65,14 +85,17 @@ const MenuOption = () => {
         return styleReset;
     }
 
+    
+
 
     return (
         <div className="menuoption">
             <div className="dropdown-menu-option">
                 <div className="menu-tab">
 
-                    <div className="dropdown-option-btn dropdown-option-category"
+                    <div className="dropdown-option-btn dropdown-option-category dropdown-option-active"
                         onClick={() => {
+                            setActiveMenuTab(1)
                             setIsDown(!isDown)
                             setIsCatOpen(!isCatOpen)
                         }}>
@@ -87,7 +110,7 @@ const MenuOption = () => {
                     {isCatOpen && (
                         <div className="dropdown-content dropdown-category">
                             {menuCategory.map((item, index) => (
-                                <div>
+                                <div key={index}>
                                     <span></span>
                                     <p className="" onClick={
                                         () => {
@@ -107,8 +130,9 @@ const MenuOption = () => {
 
                 <div className="menu-tab">
 
-                    <div className="dropdown-option-btn dropdown-option-language"
+                    <div className="dropdown-option-btn dropdown-option-language dropdown-option-active"
                         onClick={() => {
+                            setActiveMenuTab(2)
                             setIsDownArrowLang(!isDownArrowLang)
                             setIsLangOpen(!isLangOpen)
                         }}
@@ -143,9 +167,12 @@ const MenuOption = () => {
                 </div>
 
 
-                <div className="menu-tab">
-                    <div className="dropdown-option-btn dropdown-option-styles"
+                <div className="menu-tab" >
+                    <div
+                     className={`dropdown-option-btn dropdown-option-styles 
+                     `}
                         onClick={() => {
+                            setActiveMenuTab(3)
                             setIsDownArrowStyle(!isDownArrowStyle)
                             setIsStyleOpen(!isStyleOpen)
                         }}
