@@ -31,6 +31,7 @@ const MenuOption = () => {
         if (!isChecked) {
             setIsStyleNo(defaultStyle)
         }
+        
 
         else {
             setIsStyleNo(0)
