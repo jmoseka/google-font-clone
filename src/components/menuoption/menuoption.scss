@@ -1,12 +1,13 @@
 @import "/src/components/homepage.scss";
 
-$option-menu-gap: .3rem;
+$option-menu-gap: .25rem;
+$checkbox-border: 1.7rem;
 
 .menuoption {
     margin-top: $margin-small-middle-height;
     display: flex;
     align-items: center;
-    letter-spacing: .4px;
+    letter-spacing: .2px;
     color: $dark-gray;
     
     gap: 2.2rem;
@@ -15,28 +16,45 @@ $option-menu-gap: .3rem;
 .dropdown-menu-option {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     font-weight: 500;
-    cursor: pointer;
 }
 
-.dropdown-option {
+.menu-tab {
+    position: relative;
+}
+
+.dropdown-option-btn {
+    color: $dark-gray;
+    background-color: $color-white;
     border: 1px solid $light-gray;
     border-radius: 2rem;
-    padding: .5rem 1.2rem;
+    padding: .7rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: $option-menu-gap;
+    cursor: pointer;
 
     &:hover {
-        background-color: $secondary-color-hover-light;
+        background-color: rgba($secondary-color-hover-light, 70%);
         color: $secondary-color;
     }
 }
 
+.dropdown-option-btn:active {
+    background-color: red;
+}
+
+.dropdown-option-active {
+    border: 1px solid $secondary-color-dark;
+    background-color: $secondary-color-hover-light;
+    color: $secondary-color;
+}
+
 .dropdown-lbl {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
+    
 }
 
 .checkbox-menu-option {
@@ -58,4 +76,131 @@ $option-menu-gap: .3rem;
     color: $color-font-dark;
     font-size: 2rem;
     font-weight: 600;
+}
+
+.number-of-style-box {
+        font-size: 1.4rem;
+        padding: 1rem 1.4rem 1.4rem 1.7rem;
+
+        p{
+            padding: 0;
+        }
+}
+
+.style-setting {
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    
+}
+
+
+
+.checkbox-slider-group {
+    display: flex;
+    cursor: pointer;
+    gap: .55rem;
+    align-items: center;
+
+    
+}
+
+.checkbox-circle {
+    border-radius: 50%;
+    padding: .82rem;
+    cursor: pointer;
+
+    .checkbox {
+
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            width: $checkbox-border;
+            height: $checkbox-border;
+            border-radius: .2rem;
+            border: 2px solid $color-black;
+            // outline: 2px solid $color-black;
+            // border: 10px solid black;
+            // border-radius: 90px;
+        }
+    
+        input[type="checkbox"]:checked::after {
+            content: "\2713"; /* Unicode character for a checkmark */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            color: $color-white;
+          }
+    
+          input[type="checkbox"]:checked::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: $checkbox-border;
+            height: $checkbox-border;
+            background-color: $secondary-color-dark;
+          }
+    
+        input[type="checkbox"]:focus {
+            border-radius: 50%;
+            outline: 1.2rem solid rgba($secondary-color, 28%);
+          }
+    
+          input[type="checkbox"]:not(:checked) {
+            border-radius: .2rem;
+            outline: none;
+          }
+
+    }
+
+}
+
+
+
+.slider-style {
+    input {
+        width: 10rem;
+    }
+}
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+.style-reset-btn {
+   width: fit-content;
+   font-family: 'Roboto', 'sans-serif';
+   color: $secondary-color;
+   font-weight: 500;
+   float: right;
+   margin-top: 1.2rem;
+   padding: .8rem 1.5rem;
+   font-size: 1.45rem;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+   border-radius: .7rem;
+
+}
+
+.style-reset-btn:hover {
+    background-color:rgba($secondary-color, 6%);
+    color: $secondary-color-dark;
 }

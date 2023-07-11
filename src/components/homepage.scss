@@ -6,9 +6,12 @@ $color-black: #000;
 $color-white: #ffffff;
 $color-white-gray: #f1f1f1;
 $dark-gray: #606469;
-$light-gray: #e4e4e4;
+$light-gray: #e4e4e4; // the lightest gray
+$light-gray-1: #d6d6d6;
+$light-gray-2: #b5b6b7;
 
-$color-font-dark: #3a3939;
+
+$color-font-dark: rgb(66, 65, 65);
 $color-font: #2c2c2c;
 
 $primary-font: 'Roboto', sans-serif;
@@ -16,18 +19,20 @@ $primary-font: 'Roboto', sans-serif;
 
 $color-red:#c84139;
 
-$secondary-color: #1a73e8;
-$secondary-color-dark: rgb(58, 28, 201);
+$secondary-color: rgb(26, 115, 232);
+$secondary-color-dark: rgb(25, 97, 221);
 $secondary-color-hover-light: #e3eefc;
 
 $main-margin-ends: 6.7rem;
-$margin-small-height: 2.4rem;
-$margin-small-middle-height: 3rem;
+$margin-small-height: 2rem;
+$margin-small-middle-height: 2rem;
 $margin-medium-height: 8rem;
 
 $transition-ease: all 0.3s ease;
 
 $toolbar-div-padding: 1.8rem;
+
+$btn-radius: .7rem;
 
 /*helper class*/
 .center-item {
@@ -66,4 +71,152 @@ $toolbar-div-padding: 1.8rem;
 
 p {
     color: $color-font
+}
+
+
+.slider {
+
+    input {
+        height: 2rem;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        border: none;
+        -webkit-appearance: none;
+        background: transparent;
+        // background-color: $secondary-color;
+        cursor: pointer;
+    }
+
+    // styling runnable track
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        background: rgba($secondary-color, 20%);
+        height: 0.4rem;
+        border-radius: .8rem;
+      }
+
+      input[type="range"]::-moz-range-track {
+        background: rgba($secondary-color, 20%);
+        height: 0.4rem;
+        border-radius: .8rem;
+      }
+
+
+      /***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -7px; /* Centers thumb on the track */
+    background-color: $secondary-color-dark;
+    height: 1.9rem;
+    width: 1.9rem;    
+    border-radius: 50%;
+    
+ }
+
+
+ /***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0; /*Removes default border-radius that FF applies*/
+    background-color: $secondary-color-dark;
+    height: 1.9rem;
+    width: 1.9rem;    
+    border-radius: 50%;
+}
+
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+  }
+  
+  /***** Chrome, Safari, Opera, and Edge Chromium *****/
+  input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid $secondary-color-dark;
+    outline: 1.3rem solid rgba($secondary-color, 28%);
+    // outline-offset: 0.125rem;
+  }
+  
+  /******** Firefox ********/
+  input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid $secondary-color-dark;
+    outline: 1.3rem solid rgba($secondary-color, 28%);    
+  }
+
+
+  input[type="range"]::-moz-range-progress {
+    background-color: $secondary-color-dark;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: $secondary-color-dark;
+}
+
+
+}
+
+.style-reset {
+
+    .checkbox-circle {
+            background-color: $light-gray;
+
+            input[type="checkbox"]:not(:focus) {
+                border-color: $dark-gray;
+            }
+            
+    }
+
+      .slider-style {
+        input {
+            pointer-events: none;
+            
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: $light-gray-2;
+            height: 0.4rem;
+            border-radius: .8rem;
+          }
+    
+          input[type="range"]::-moz-range-track {
+            background: $light-gray;
+          }
+
+          input[type="range"]::-webkit-slider-thumb {
+            background-color: $light-gray-2;  
+         }
+
+         input[type="range"]::-moz-range-thumb {
+            background-color: $light-gray-2;
+         }
+        
+        
+         /***** Firefox *****/
+        input[type="range"]::-moz-range-progress {
+            background-color: $light-gray-2;
+        }  
+      }
+
+      .style-reset-btn {
+        color: rgba($light-gray-2, 65%);
+        pointer-events: none;
+      }
+
+      .style-no-update {
+        display: none;
+      }
+
+    
+}
+
+.plus {
+  font-size: 1.38rem;
+  font-weight: bold;
+}
+
+.style-no-update {
+  // font-size: 1.3rem;
+  letter-spacing: -0.7px;
 }

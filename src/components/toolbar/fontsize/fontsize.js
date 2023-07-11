@@ -52,7 +52,7 @@ const FontSize = ({onFontChange}) => {
         )}
 
       </div>
-      <div className="fontsize-slider">
+      <div className="fontsize-slider slider">
         <input type="range" min="8" max="280" value={fontSize} onChange={handleScrollBarFont} />
       </div>
 
